@@ -1,0 +1,20 @@
+{
+  "name": "integralmall-grunt-angular",
+  "description": "The project whitch develop by grunt & angular.",
+  "authors": [
+    "Nicky.Wu"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "integralmall",
+    "grunt",
+    "angular"
+  ],
+  "homepage": "https://github.com/wukaitao/integralmall-grunt-angular",
+  "private": true,
+  "dependencies": {
+    "angular": "angularjs#~1.6.3",
+    "angular-route": "~1.6.3",
+    "angular-resource": "~1.6.3"
+  }
+}

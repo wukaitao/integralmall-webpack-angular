@@ -1,0 +1,23 @@
+﻿<div class="home">
+	<h1>
+		{{data.description}}
+	</h1>
+	<nav class="menu">
+		<button type="button" class="btn" ng-repeat="one in data.btnList" ng-click="form.goPage(one);">{{one.name}}</button>
+	</nav>
+	<div class="image-container">
+		<span class="image-item" ng-repeat="one in data.imageList">
+			<img ng-src="{{one}}"/>
+		</span>
+	</div>
+	<div sidebox title="Links" ng-show="false">
+		<ul>
+			<li ng-repeat="one in data.btnList">{{one.name}}</li>
+		</ul>
+	</div>
+	<div sidebox title="ImageList" ng-show="false">
+		<span ng-repeat="one in data.imageList">
+			<a ng-href="{{one}}" target="_self">{{$index+1}}</a>
+		</span>
+	</div>
+</div>

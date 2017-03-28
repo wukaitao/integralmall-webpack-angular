@@ -1,0 +1,32 @@
+{
+  "name": "integralmall-grunt-angular",
+  "version": "1.0.0",
+  "description": "The project whitch develop by grunt & angular.",
+  "keywords": "grunt angular",
+  "bugs": {
+    "email": "wukaitao2006@163.com"
+  },
+  "files": [
+    "build",
+    "client",
+    "package.json",
+    "README.md"
+  ],
+  "bin": "./path/to/program",
+  "main": "build/dev-server.js",
+  "scripts": {
+    "dev": "node build/dev-server.js",
+    "build": "node build/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wukaitao/integralmall-grunt-angular.git"
+  },
+  "author": "Nicky.Wu",
+  "license": "ISC",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4"
+  }
+}
