@@ -1,9 +1,9 @@
-# integralmall-grunt-angular
-angular开发grunt打包的webapp
+# integralmall-webpack-angular
+angular开发webpack打包的webapp
 ----------
 * 以下为项目框架/打包注解
-    * grunt:打包工具
-    * grunt-autoprefixer:为兼容浏览器添加css前缀
+    * babel:转换ES6为浏览器支持的ES5
+    * http-proxy-middleware:代理服务器
     * html-webpack-plugin:生成html文件
     * transfer-webpack-plugin:复制文件
     * copy-webpack-plugin:复制文件(可以单个文件复制)
@@ -12,13 +12,6 @@ angular开发grunt打包的webapp
     * webpack-hot-middleware:热重载
     * opn:浏览器打开地址
     
-    * react:mvvn框架
-    * react-router:react路由
-    * react-dom:react渲染
-    * redux:redux数据仓库
-    * redux-thunk:redux异步加载
-    * react-addons:处理样式过度和样式对象等
-    * fetch:http请求
     * md5:md5加密
     
     * express:框架结构
