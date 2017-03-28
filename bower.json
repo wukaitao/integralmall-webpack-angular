@@ -1,6 +1,6 @@
 {
-  "name": "integralmall-grunt-angular",
-  "description": "The project whitch develop by grunt & angular.",
+  "name": "integralmall-webpack-angular",
+  "description": "The project whitch develop by webpack & angular.",
   "authors": [
     "Nicky.Wu"
   ],
@@ -10,7 +10,7 @@
     "grunt",
     "angular"
   ],
-  "homepage": "https://github.com/wukaitao/integralmall-grunt-angular",
+  "homepage": "https://github.com/wukaitao/integralmall-webpack-angular",
   "private": true,
   "dependencies": {
     "angular": "angularjs#~1.6.3",
