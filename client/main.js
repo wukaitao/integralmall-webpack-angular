@@ -1,77 +1,14 @@
-﻿var app = angular.module('indexApp',['ngRoute','ngResource','ngAnimate','hmTouchEvents']);
+﻿require('./assets/lib/common.js');
+require('./assets/css/main.css');
+
+const app = angular.module('indexApp',['ngRoute','ngResource','ngAnimate','hmTouchEvents']);
 app.config(['$routeProvider',function($routeProvider){
 	$routeProvider.when('/healthyManage',{
-		templateUrl: 'template/healthyManage.html',
-		controller: healthyManageCtrl
+		template: require('./assets/template/home.html'),
+		controller: require('./assets/controller/home.js')
 	}).when('/',{
-		templateUrl: 'template/home.html',
-		controller: homeCtrl
-	}).when('/healthyTrouble',{
-		templateUrl: 'template/healthyTrouble.html',
-		controller: healthyTroubleCtrl
-	}).when('/healthyTroubleType',{
-		templateUrl: 'template/healthyTroubleType.html',
-		controller: healthyTroubleTypeCtrl
-	}).when('/healthyTroubleArtcle',{
-		templateUrl: 'template/healthyTroubleArtcle.html',
-		controller: healthyTroubleArtcleCtrl
-	}).when('/healthyTask',{
-		templateUrl: 'template/healthyTask.html',
-		controller: healthyTaskCtrl
-	}).when('/healthyAssessment',{
-		templateUrl: 'template/healthyAssessment.html',
-		controller: healthyAssessmentCtrl
-	}).when('/healthyAssessmentBak',{
-		templateUrl: 'template/healthyAssessment_bak.html',
-		controller: healthyAssessmentCtrlBak
-	}).when('/myHealthy',{
-		templateUrl: 'template/myHealthy.html',
-		controller: myHealthyCtrl
-	}).when('/myCommunity',{
-		templateUrl: 'template/myCommunity.html',
-		controller: myCommunityCtrl
-	}).when('/createJogGroup',{
-		templateUrl: 'template/jog/createJogGroup.html',
-		controller: createJogGroupCtrl
-	}).when('/joggersTop/:groupId',{
-		templateUrl: 'template/jog/joggersTop.html',
-		controller: joggersTopCtrl
-	}).when('/jogGroup',{
-		templateUrl: 'template/jog/jogGroup.html',
-		controller: jogGroupCtrl
-	}).when('/jogGroupDetail/:groupId',{
-		templateUrl: 'template/jog/jogGroupDetail.html',
-		controller: jogGroupDetailCtrl
-	}).when('/jogGroupMember/:groupId',{
-		templateUrl: 'template/jog/jogGroupMember.html',
-		controller: jogGroupMemberCtrl
-	}).when('/jogGroupTop',{
-		templateUrl: 'template/jog/jogGroupTop.html',
-		controller: jogGroupTopCtrl
-	}).when('/joinJogGroup',{
-		templateUrl: 'template/jog/joinJogGroup.html',
-		controller: joinJogGroupCtrl
-	}).when('/moreJogGroup',{
-		templateUrl: 'template/jog/moreJogGroup.html',
-		controller: moreJogGroupCtrl
-	}).when('/searchJogGroup',{
-		templateUrl: 'template/jog/searchJogGroup.html',
-		controller: searchJogGroupCtrl
-	}).when('/selectLeader',{
-		templateUrl: 'template/jog/selectLeader.html',
-		controller: selectLeaderCtrl
-	}).when('/friendApplyMessage',{
-		templateUrl: 'template/jog/message/friendApplyMessage.html',
-		controller: friendApplyMessageCtrl
-	}).when('/groupPkMessage',{
-		templateUrl: 'template/jog/message/groupPkMessage.html',
-		controller: groupPkMessageCtrl
-	}).when('/jogGroupMessage',{
-		templateUrl: 'template/jog/message/jogGroupMessage.html',
-		controller: jogGroupMessageCtrl
-	}).when('/messagePortal',{
-		templateUrl: 'template/jog/message/messagePortal.html',
-		controller: messagePortalCtrl
+		template: require('./assets/template/home.html'),
+		controller: require('./assets/controller/home.js')
 	});
 }]);
 app.run(['$rootScope', 'form', '$timeout', 'createDialog', function($rootScope, form, $timeout, createDialog){
@@ -337,49 +274,3 @@ app.directive('sidebox',function(){
 angular.element(document).ready(function(){
 	angular.bootstrap(window.document,['indexApp']);
 });
-//跟踪器
-var trackerList = [];
-function tracker(EventId,Label,MapKv){
-	if(!tracker) trackerList.push({EventId:EventId,Label:Label,MapKv:MapKv});
-	else{
-		if(trackerList.length){
-			trackerList.forEach(function(item,index){
-				TDAPP.onEvent(item.EventId,item.Label,item.MapKv);
-			});
-			trackerList = [];
-		}else TDAPP.onEvent(EventId,Label,MapKv);
-	};
-};
-//截取url
-function cutPageUrl(url){
-	var url = url || '';
-	var index = url.indexOf('index.html');
-	if(index != -1) return url.substr(0,index);
-	return '';
-};
-
-//api接口
-var inviteListApi = 'request/jog/inviteList.json';                       //邀请列表:好友/团战
-var acceptInviteApi = 'request/jog/acceptInvite.json';                   //接受邀请:好友/团战
-var delInviteApi = 'request/jog/delInvite.json';                         //删除邀请:好友/团战
-
-var acceptJoinGroupApi = 'request/jog/acceptJoinGroup.json';             //接受加入跑团
-var refuseJoinGroupApi = 'request/jog/refuseJoinGroup.json';             //拒绝加入跑团
-var getMessageApi = 'request/jog/getMessage.json';                       //获取跑团消息
-var createGroupApi = 'request/jog/createGroup.json';                     //创建跑团
-var getMemberRankApi = 'request/jog/getMemberRank.json';                 //获取成员排行
-var getStatusUserInGroupApi = 'request/jog/getStatusUserInGroup.json';   //是否已申请加入跑团
-var getGroupInfoApi = 'request/jog/getGroupInfo.json';                   //获取跑团信息
-var joinGroupApi = 'request/jog/joinGroup.json';                         //加入跑团
-var cancelJoinApi = 'request/jog/cancelJoin.json';                       //取消加入
-var exitGroupApi = 'request/jog/exitGroup.json';                         //退出跑团
-var delMemeberApi = 'request/jog/delMemeber.json';                       //移除成员
-var getGroupRankApi = 'request/jog/getGroupRank.json';                   //获取跑团排行
-var getRecommendGroupsApi = 'request/jog/getRecommendGroups.json';       //获取推荐跑团
-var getGroupListApi = 'request/jog/getGroupList.json';                   //获取跑团列表
-var getMemberListApi = 'request/jog/getMemberList.json';                 //获取成员列表
-var updateGroupLeadApi = 'request/jog/updateGroupLead.json';             //团长变更
-var shareGroupMessageApi = 'request/jog/shareGroupMessage.json';         //分享团信息
-
-var sendInviteApi = 'request/jog/sendInvite.json';                       //邀请:好友
-var jogInviteListApi = 'request/jog/jogInviteList.json';                 //邀请列表:跑团

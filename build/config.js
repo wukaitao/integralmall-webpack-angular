@@ -3,7 +3,10 @@ const path = require('path');//路径中间件
 module.exports = {
 	entry: {
 		vendor: [
-			'./bower_components/jquery/dist/jquery.js'
+			'./bower_components/jquery/dist/jquery.js',
+			'./bower_components/angular/angular.js',
+			'./bower_components/angular-route/angular-route.js',
+			'./bower_components/angular-resource/angular-resource.js'
 		],
 		main: [
 			'./client/main.js'
@@ -11,6 +14,10 @@ module.exports = {
 	},
 	module: {
 		loaders: [
+			{
+				test: /\.(htm|html)$/,
+				loader: 'html'
+			},
 			{
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
@@ -44,8 +51,8 @@ module.exports = {
 				loader: 'expose?jQuery!expose?$'
 			},
 			{
-				test: path.resolve(__dirname,'../bower_components/fetch/fetch.js'),
-				loader: 'expose?fetch'
+				test: path.resolve(__dirname,'../bower_components/angular/angular.js'),
+				loader: 'expose?angular'
 			}
 		]
 	}
