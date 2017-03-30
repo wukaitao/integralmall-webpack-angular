@@ -1,9 +1,12 @@
-﻿require('./assets/lib/common.js');
+﻿const angular = require('angular');
+require('angular-route');
+require('angular-resource');
+require('./assets/lib/common.js');
 require('./assets/css/main.css');
 
-const app = angular.module('indexApp',['ngRoute','ngResource','ngAnimate','hmTouchEvents']);
+const app = angular.module('indexApp',['ngRoute','ngResource']);
 app.config(['$routeProvider',function($routeProvider){
-	$routeProvider.when('/healthyManage',{
+	$routeProvider.when('/home',{
 		template: require('./assets/template/home.html'),
 		controller: require('./assets/controller/home.js')
 	}).when('/',{

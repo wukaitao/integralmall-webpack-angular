@@ -3,10 +3,7 @@ const path = require('path');//路径中间件
 module.exports = {
 	entry: {
 		vendor: [
-			'./bower_components/jquery/dist/jquery.js',
-			'./bower_components/angular/angular.js',
-			'./bower_components/angular-route/angular-route.js',
-			'./bower_components/angular-resource/angular-resource.js'
+			'./bower_components/jquery/dist/jquery.js'
 		],
 		main: [
 			'./client/main.js'
@@ -49,10 +46,6 @@ module.exports = {
 			{
 				test: path.resolve(__dirname,'../bower_components/jquery/dist/jquery.js'),
 				loader: 'expose?jQuery!expose?$'
-			},
-			{
-				test: path.resolve(__dirname,'../bower_components/angular/angular.js'),
-				loader: 'expose?angular'
 			}
 		]
 	}
