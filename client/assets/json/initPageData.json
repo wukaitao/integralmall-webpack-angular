@@ -1,0 +1,27 @@
+﻿{
+    "respCode": "00", 
+    "respDesc": "请求成功", 
+    "respData": {
+        "totalScore": 50000, 
+        "bannerList": [
+            {
+                "bannerType": "A001", 
+                "bannerName": "积分商城上线了", 
+                "bannerImageUrl": "https://res.cignacmb.com/member/score/6fcd5d71023d410bb7761fa50557746d.png", 
+                "bannerLinkUrl": "https://member.cignacmb.com/shop/index.html", 
+                "startDate": 1490606927271, 
+                "endDate": 1490606963277, 
+                "sortNo": 1
+            }, 
+            {
+                "bannerType": "A001", 
+                "bannerName": "挂号网", 
+                "bannerImageUrl": "https://res.cignacmb.com/member/score/6fcd5d71023d410bb77002360557746d.png", 
+                "bannerLinkUrl": "http://www.guahao.com/", 
+                "startDate": 1490606936369, 
+                "endDate": 1490606989623, 
+                "sortNo": 2
+            }
+        ]
+    }
+}
