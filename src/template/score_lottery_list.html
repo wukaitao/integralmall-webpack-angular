@@ -1,0 +1,66 @@
+<div class="score_lottery_list">
+    <div class="mlc_main">
+        <!--奖品列表-->
+        <div class="mlc_shopping_list" ng-if="renderData.length">
+            <div class="mlc_items" ng-repeat="item in renderData">
+                <div class="mlc_items_c">
+                    <div class="mlc_items_img">
+                    	<img ng-src="{{item.imageUrl}}"/>
+                    </div>
+                    <div class="mlc_detail">
+                        <div class="mlc_title">{{item.productName}}</div>
+                        <div class="mlc_d">
+                            <div class="mlc_score"><span class="blue">{{item.scoreValue}}积分</span></div>
+                        </div>
+                        <div class="mlc_do_lottery" ng-click="toScoreLotteryDetail(item);">立即抽奖</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="line-height: 28px;text-align: center;" ng-if="!renderData.length">暂时没有数据,请稍后查询.</div>
+        <!--奖品列表-->
+
+        <div class="bottomLoading">
+            <div class="floatLeft loadingIcon"><img width="100%" src="../img/loadIcon.png" alt=""></div>
+            <div class="floatLeft loadingFont">加载中...</div>
+        </div>
+        <!--奖品列表-->
+
+        <!--中奖公示页-->
+        <div class="showListsPopup" ng-show="showLottery">
+            <div class="ListsMain">
+                <div class="ListsHearder blue">中奖公示页</div>
+                <div class="line" ></div>
+                <div class="ListsBody">
+                    <ul ng-if="renderDataReward.length">
+                        <li ng-repeat="item in renderDataReward">
+                            <div class="floatLeft name">{{item.userName}}</div>
+                            <div class="floatLeft moble">{{item.mobile}}</div>
+                            <div class="floatLeft prize">{{item.productName}}</div>
+                        </li>
+                    </ul>
+                    <div style="line-height: 28px; text-align: center;" ng-if="!renderDataReward.length">暂时没有数据,请稍后查询.</div>
+                </div>
+                <div class="ListsFooter blue" ng-click="showLottery=false;">我知道了</div>
+            </div>
+        </div>
+        <!--中奖公示页-->
+
+    </div>
+    <!--底部tab-->
+    <div class="bottomTab">
+        <div class="btn1 blue" ng-click="showLotteryHistory();">往期中奖</div>
+        <div class="btn2 blue" ng-click="toMyWinnerRecordPath();">我的中奖记录</div>
+        <div class="number">88</div>
+    </div>
+
+</div>
+<style type="text/css">
+	.score_lottery_list .mlc_items_img{
+		background: transparent !important;
+		padding-bottom: 0 !important;
+	}
+	.score_lottery_list .mlc_items_img img{
+		width: 100%;
+	}
+</style>

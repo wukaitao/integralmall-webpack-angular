@@ -1,0 +1,9 @@
+<div class="groupsA_To_earn_points">
+    <div class="tools">
+        <div class="tool" ng-repeat="item in renderData">
+            <div class="toolImg" ng-click="clickFn(item.code);"><img ng-src="{{item.imageUrl}}" alt="{{item.name}}"></div>
+            <div class="NeedPoints" ng-class="item.isComplete ? 'grey' : 'blue2'">{{item.count}}</div>
+            <div class="name grey">{{item.name+(item.isComplete?'(已完成)':'')}}</div>
+        </div>
+    </div>
+</div>

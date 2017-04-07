@@ -1,0 +1,176 @@
+.floatLeft {
+    float: left;
+}
+
+.floatRight{
+    float: right;
+}
+
+.score_lottery_detail {
+    font-size: 1.4em;
+}
+
+/*通用*/
+.sld_fs14 {
+    font-size: 1.5em;
+}
+
+.sld_ml2p {
+    margin-left: 2%;
+}
+
+.sld_product_detail_text {
+    position: relative;
+    border-bottom: 1px solid #efeded;
+    margin-bottom: 2%;
+    height: 1.8em;
+    line-height: 1.8em;
+}
+
+.sld_product_detail_text img {
+    position: absolute;
+    right: 0%;
+    top: 30%;
+    width: 4%;
+}
+
+.sld_product_detail_content {
+    margin-bottom: 4em;
+}
+
+/*大图*/
+
+/*轮播图*/
+.score_lottery_detail .sld_ItemIMG {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+}
+
+
+.sld_ItemIMG .scrollImg {
+    overflow-x: auto;
+    padding-bottom: 100%;
+
+}
+
+.sld_ItemIMG .scrollImg ul {
+    padding: 0;
+    width: 400%;
+}
+
+.sld_ItemIMG .scrollImg li {
+    list-style: none;
+    width: 25%;
+}
+
+.sld_ItemIMG .scrollImg li img{
+    width:100%
+}
+
+.sld_ItemIMG .points {
+    overflow-x: auto;
+    position: absolute;
+    top: 87%;
+    width: 100%;
+    text-align: center;
+
+}
+
+.sld_ItemIMG .points .point {
+    font-size: 2em;
+
+}
+
+/*轮播图*/
+/*产品说明*/
+.sld_ItemName {
+    background-color: white;
+    padding: 4% 4%;
+}
+
+.sld_ItemName img {
+    width: 8%;
+    margin-right: 0.3em;
+}
+
+.sld_ItemCollection {
+    background-color: white;
+    padding: 0% 4% 3% 4%;
+    margin-bottom: 10px;
+}
+
+.sld_tips {
+    margin-left: 65%;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    padding: 1px 8px;
+}
+
+/*活动规则*/
+.sld_rule_box {
+    font-size: 0.9em;
+    background-color: white;
+    padding: 3%;
+}
+
+.sld_rule {
+    border-bottom: 1px solid #efeded;
+    margin-bottom: 2%;
+    height: 2.5em;
+    line-height: 2.5em;
+}
+
+.sld_rule_li {
+    line-height: 2em;
+    /*list-style-type: square*/
+}
+.sld_rule_li div{
+    color:#5a5a5a;
+    /*list-style-type: square*/
+}
+
+/*产品详情*/
+.sld_Product_tab {
+    margin-top: 10px;
+    padding: 3%;
+    background-color: white;
+    border-bottom: 1px solid #F7F7F7;
+}
+
+.sld_ItemInfo {
+    width: 100%;
+    background-color: white;
+
+}
+
+/*底栏*/
+.sld_bottomTool {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4em;
+    background-color: white;
+    border-top: 1px solid #e0e0e0;
+    background-color: #0087E6;
+}
+
+.sld_bottomTool .sld_addMyShopping {
+    width: 100%;
+    height: 4em;
+    line-height: 4em;
+    background-color: #0087E6;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    margin: auto;
+    text-align: center;
+
+}
+
+

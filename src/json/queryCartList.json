@@ -1,0 +1,24 @@
+﻿{
+    "respCode": "00", 
+    "respDesc": "请求成功", 
+    "respData": [
+		{
+			"productCode": "ZSXN2017010510000336081",
+			"productName": "LK堂皇高弹安睡枕LK 堂皇高弹安 枕LK 堂皇高弹安睡枕",
+			"scoreValue": "40500 ",
+			"imageUrl": "../img/shopping_img.png",
+			"num": "1",
+			"type": "1",
+			"status": "1"
+		},
+		{
+			"productCode": "ZSXN2017010510000336081",
+			"productName": "LK堂皇高弹安睡枕LK 堂皇高弹安 枕LK 堂皇高弹安睡枕",
+			"scoreValue": "40500 ",
+			"imageUrl": "../img/shopping_img.png",
+			"num": "2",
+			"type": "0",
+			"status": "0"
+		}
+	]
+}

@@ -1,0 +1,37 @@
+<div class="addressManager">
+    <div class="am_item" ng-repeat="item in renderData" ng-if="renderData.length">
+        <div class="am_contact">
+            <span class="blue">{{item.receiveName}}</span>
+            <span class="am_mobile">{{item.mobile}}</span>
+        </div>
+        <div class="am_address">{{item.provinceName + item.cityName + item.countyName + item.detail}}</div>
+        <div class="am_line"></div>
+        <div class="am_con">
+            <div class="am_default" ng-click="setDefaultAddress(item);">
+                <div ng-class="item.isDefault=='1' ? 'am_icon_default' : 'am_icon_none_select'"></div>
+                <div class="am_label">默认地址</div>
+            </div>
+            <div class="am_edit" ng-click="toAddressEditPath(item);">
+                <div class="am_icon_edit"></div>
+                <div class="am_edit_label">编辑</div>
+            </div>
+            <div class="am_del">
+                <div class="am_icon_del"></div>
+                <div class="am_del_label" ng-click="deleteAddress(item,$index);">删除</div>
+            </div>
+        </div>
+    </div>
+
+    <!--没有地址-->
+    <div class="NoAddress" ng-if="!renderData.length">
+        <img width="60%" src="../img/address.png" alt="">
+        <div class="font">未有收货人信息</div>
+    </div>
+    <!--没有地址-->
+
+    <div class="am_end">
+        <div class="am_border blue" ng-click="toAddressAddPath();">
+            +新增地址
+        </div>
+    </div>
+</div>

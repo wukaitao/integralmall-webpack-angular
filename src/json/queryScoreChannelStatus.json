@@ -1,0 +1,11 @@
+﻿{
+    "respCode": "00", 
+    "respDesc": "请求成功", 
+    "respData": {
+		"registerLogin": true,
+		"bindPolicy": false,
+		"renewPolicy": false,
+		"signature": false,
+		"scoreDraw": false
+    }
+}

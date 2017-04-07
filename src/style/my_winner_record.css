@@ -1,0 +1,128 @@
+.my_winner_record .mlc_main {
+    width: 100%;
+    margin-bottom: 15%;
+}
+
+/*往期中奖*/
+.my_winner_record .mlc_address_set {
+    position: relative;
+    background: #ffffff;
+    width: 100%;
+    padding: 4% 4% 4%;
+    margin-bottom: 4%;
+}
+
+.my_winner_record .mlc_icon {
+    position: absolute;
+    width: 3%;
+    left: 2%;
+    height: 100%;
+    top: 0;
+    background: url("../img/orderEdit/arrow_right.png") no-repeat center;
+    background-size: 100% auto;
+}
+
+.my_winner_record .mlc_text {
+    position: absolute;
+    width: 30%;
+    left: 8%;
+    height: 100%;
+    top: 32%;
+    background-size: 100% auto;
+}
+
+.my_winner_record .mlc_arrow {
+    position: absolute;
+    width: 3%;
+    right: 2%;
+    height: 100%;
+    top: 0;
+    background: url("../img/orderEdit/arrow_right.png") no-repeat center;
+    background-size: 100% auto;
+}
+
+/*奖品列表*/
+.my_winner_record .mlc_items {
+    background: #ffffff;
+    padding: 1% 4%;
+    margin-bottom: 1px;
+}
+
+.my_winner_record .mlc_items_c {
+    width: 100%;
+    overflow: hidden;
+}
+
+.my_winner_record .mlc_items_img {
+    float: left;
+    width: 32%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-bottom: 32%;
+    background: url(/img/shopping_img.2f2c87a.png) no-repeat center;
+    background-size: 100% auto;
+}
+
+.my_winner_record .mlc_detail {
+    float: left;
+    width: 68%;
+    position: relative;
+    margin-top: 0.4em;
+}
+
+.my_winner_record .mlc_title {
+    margin-top: 4%;
+    font-size: 1.4em;
+    padding: 0 6%;
+}
+
+.my_winner_record .mlc_score {
+    float: left;
+    width: 40%;
+    margin-top: 8%;
+    margin-left: 6%;
+}
+
+.my_winner_record .mlc_score span {
+    font-size: 1.2em;
+}
+
+.my_winner_record .mlc_do_lottery {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 29%;
+    line-height: 1.8em;
+    height: 22%;
+    text-align: center;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.2em;
+}
+
+.my_winner_record .mlc_do_lottery_red {
+    background: red;
+}
+
+.my_winner_record .mlc_do_lottery_gray {
+    background: #636363;
+}
+
+/*底部加载*/
+.loadingToList {
+    margin-top: 3%;
+    padding-bottom: 6%;
+    width: 100%;
+}
+
+.loadingToList .loadingIcon {
+    width: 5%;
+    float: left;
+    margin-left: 40%;
+}
+
+.loadingToList .loadingFont {
+    float: left;
+    margin-left: 3%;
+    font-size: 1.4em;
+}

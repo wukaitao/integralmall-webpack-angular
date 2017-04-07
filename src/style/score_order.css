@@ -1,0 +1,192 @@
+
+.score_order .so_shopping_list{
+    margin-bottom: 10px;
+}
+
+.so_main {
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+/*分类*/
+.so_address_set {
+    position: relative;
+    width: 100%;
+    height: 3em;
+}
+
+.so_text {
+    float: left;
+    margin-left: 12%;
+    width: 17.33%;
+    text-align: center;
+    background-size: 100% auto;
+    font-size: 1.4em;
+    line-height: 2.4em;
+    height: 100%;
+}
+
+.so_active {
+    border-bottom: solid 2px #0582c8;
+}
+
+/*列表*/
+.so_items {
+    position: relative;
+    background: #ffffff;
+    padding: 2% 4%;
+    margin-bottom: 1px;
+}
+
+.score_order .so_items_number {
+    height: 2.5em;
+    font-size: 1.3em;
+    padding: 2% 0;
+    position: relative;
+}
+
+
+.so_items_id {
+    font-size: 1.2em;
+    padding: 0% 6%;
+}
+
+
+.so_items_line {
+    width: 100%;
+    height: 1px;
+    background: #d7d7d7;
+}
+
+.so_delete_icon {
+    position: absolute;
+    width: 4%;
+    right: 4%;
+    height: 15%;
+    top: 3%;
+    background: url("../img/del_black.png") no-repeat center;
+    background-size: 100% auto;
+}
+
+.so_items_c {
+    width: 100%;
+    overflow: hidden;
+}
+
+.so_items_img {
+    float: left;
+    width: 18%;
+    padding-bottom: 20%;
+    background: url("../img/shoppingCart/shopping_img.png") no-repeat center;
+    background-size: 100% auto;
+}
+
+.so_score {
+    float: left;
+    width: 44%;
+    margin-top: 5%;
+    margin-left: 6%;
+}
+
+.so_score span {
+    font-size: 2.0em;
+}
+
+.so_title {
+    font-size: 1.2em;
+    padding: 0 6%;
+    line-height: 200%;
+}
+
+.so_detail {
+    float: left;
+    width: 81%;
+    position: relative;
+}
+
+.so_amount {
+    position: absolute;
+    right: 0;
+    top: 36%;
+    font-size: 1.34em;
+
+}
+
+.so_items_explain {
+    width: 100%;
+    position: relative;
+    /*padding-bottom: 10%;*/
+    border-bottom: 1px #d7d7d7 solid;
+}
+
+.so_items_explain_l_text {
+    color: #e6000F;
+    line-height: 3em;
+    font-size: 1.35em;
+    position: absolute;
+    left: 0%;
+
+}
+
+.so_items_explain_r_text {
+    font-size: 1.34em;
+    padding: 5% 0;
+}
+
+.so_items_buttons {
+    width: 100%;
+    position: relative;
+    /*padding-bottom: 10%;*/
+    height: 3em;
+}
+
+.so_items_button {
+    /*position: absolute;*/
+    /*right: 22%;*/
+    float: right;
+    margin-top: 0.5em;
+    line-height: 2.5em;
+    height: 2.5em;
+    border-radius: 2em;
+    width: 20%;
+    text-align: center;
+    border: 1px #0582c8 solid;
+    color: #0582c8;
+}
+
+.score_order .confirm{
+    /*position: absolute;*/
+    /*right: 0;*/
+    float: right;
+    margin-top: 0.5em;
+    line-height: 2.5em;
+    height: 2.5em;
+    border-radius: 2em;
+    width: 20%;
+    text-align: center;
+    border: 1px #0582c8 solid;
+    background-color: #0582c8;
+    color: white;
+    margin-left: 2%;
+}
+
+
+.score_order .bottomLoading {
+    height: 0;
+    padding-bottom: 7%;
+    float: left;
+    padding-top: 3%;
+    width: 100%;
+    text-align: center;
+}
+
+.score_order .bottomLoading .loadingIcon {
+    margin-left: 42%;
+    width: 4%;
+}
+
+.score_order .bottomLoading .loadingFont {
+    margin-left: 2%;
+    color: #585858;
+
+}

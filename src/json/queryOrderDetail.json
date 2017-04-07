@@ -1,0 +1,22 @@
+﻿{
+    "respCode": "00", 
+    "respDesc": "请求成功", 
+    "respData": {
+		"orderCode": "20170105100",
+		"productCode": "ZSXN2017010510000336081",
+		"productName": "LK堂皇高弹安睡枕LK 堂皇高弹安 枕LK 堂皇高弹安睡枕",
+		"imageUrl": "../img/shopping_img.png",
+		"productAmount": "1",
+		"scoreValue": "7999",
+		"statusCode": "04",
+		"statusDesc": "已收货",
+		"orderDate": "2017-02-28 13:25:36",
+		"expressDatail": {
+			"date": "2017-01-05 19:20:07",
+			"desc": "已收件,发往上海航空部运往深圳南山区省通营业部"
+		},
+		"receiverName": "张三",
+		"mobileCode": "13842000000",
+		"detailAddress": "广东深圳市南山区 康佳研发大厦-明玉路25号 11F"
+    }
+}

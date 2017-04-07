@@ -1,0 +1,167 @@
+
+.my_score_main {
+    width: 100%;
+    margin-bottom: 15%;
+
+}
+
+.my_score_main .score_av, .score_cs, .score_history {
+    box-sizing: border-box;
+}
+
+/*积分*/
+.score_av {
+    background-color: white;
+
+}
+
+.score_av_title {
+    font-size: 1.6em;
+    padding-bottom: 7%;
+}
+
+.score_av_title .icon {
+    width: 6%;
+    float: left;
+    margin-top: 0.8%;
+}
+
+.score_av_title .font {
+    float: left;
+    margin-left: 2%;
+    margin-top: 0.05em;
+
+}
+
+.my_score_main .score_av .score_av_number {
+    width: 100%;
+    text-align: center;
+    padding: 0.5em 0;
+    font-size: 4em;
+}
+
+.my_score_cs {
+    margin-top: 1px;
+    background-color: white;
+    font-size: 1.6em;
+    height: 3em;
+    margin-bottom: 2% !important;
+}
+
+.score_cs_l {
+    width: 49%;
+    float: left;
+}
+
+.my_score_cs_title {
+    text-align: center;
+    line-height: 3em;
+    height: 3em;
+
+}
+
+.score_cs_m {
+    float: left;
+    width: 1%;
+    height: 100%;
+    box-sizing: border-box;
+    border-right: 1px solid #efeded !important;
+}
+
+.score_cs_r {
+    width: 50%;
+    float: right;
+}
+
+.score_cs div {
+    /*height: 3em;*/
+    /*line-height: 3em;*/
+    /*float: left;*/
+}
+
+.score_cs_title {
+    height: 3em;
+    line-height: 3em;
+    font-size: 1em;
+    display: inline-block;
+
+}
+
+.score_cs_num {
+    display: inline-block;
+    margin-left: 10%;
+}
+
+/*猜你喜欢*/
+.my_score_guess {
+    padding: 5%;
+    background-color: white;
+}
+
+.my_score_guess_title {
+    border-bottom: 1px solid #efeded;
+    height: 3em;
+    line-height: 3em;
+    font-size: 1.5em;
+}
+
+.my_score_guess_item {
+    border-bottom: 1px solid #efeded;
+    height: 3.2em;
+    line-height: 3.2em;
+    font-size: 1.4em;
+    position: relative;
+}
+
+.my_score_guess_item_l_icon1 {
+    position: absolute;
+    left: 0;
+    top: 25%;
+    height: 49%;
+    width: 9%;
+    background: url("../img/jifenchoujiang.png") no-repeat center;
+    background-size: auto 100%;
+
+}
+
+.my_score_guess_item_l_icon2 {
+    position: absolute;
+    left: 0;
+    top: 22%;
+    height: 55%;
+    width: 9%;
+    background: url("../img/jifenduihuan.png") no-repeat center;
+    background-size: 86% 100%;
+
+}
+
+.my_score_guess_item_l_icon3 {
+    position: absolute;
+    left: 0;
+    top: 22%;
+    height: 55%;
+    width: 9%;
+    background: url("../img/qiandao.png") no-repeat center;
+    background-size: auto 100%;
+
+}
+
+.my_score_guess_item_l_text {
+    position: absolute;
+    left: 11%;
+}
+
+.my_score_guess_item_r_text {
+    position: absolute;
+    right: 4%;
+}
+
+.my_score_guess_item_r_icon {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 3%;
+    background: url("../img/orderEdit/arrow_right.png") no-repeat center;
+    background-size: 100% auto;
+}
+

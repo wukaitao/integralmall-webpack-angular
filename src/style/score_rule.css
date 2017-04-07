@@ -1,0 +1,84 @@
+
+.score_rule{
+    font-size: 1.4em;
+}
+
+.score_rule .tab1{
+
+}
+
+.score_rule  .fontA {
+    color: #4a4a4a;
+    font-size: 1.25em;
+}
+
+.fontC {
+    color: #666666;
+    font-size: 0.8em;
+
+}
+
+.score_rule .title {
+    background-color: white;
+    padding: 6% 4% 4%;
+}
+
+.score_rule  .line1 {
+    border-top: 1px solid #d7d7d7;
+    width: 92%;
+    height: 0px;
+    /*background-color: #8b8b8b;*/
+    margin-left: 4%;
+
+}
+
+.score_rule  .line2 {
+    width: 105%;
+    height: 1px;
+    border: 0;
+    background-color: #d7d7d7;
+    margin: 0% -5% 0%;
+}
+
+.bg_white {
+    background-color: white;
+    padding: 0 2%;
+}
+
+.mf5p {
+    margin-left: 5%;
+}
+
+.score_rule .lh {
+    line-height: 120%;
+    font-size: 1.28em;
+    color: #666666;
+    padding: 4.6% 0;
+}
+
+.score_rule ul {
+    margin: 0;
+    padding: 0;
+    padding-left: 5%;
+}
+
+.score_rule li {
+}
+
+.score_rule .tab1_font {
+    padding-left: 7%;
+}
+
+.score_rule .tab2_font {
+    padding: 2% 0 2% 7%;
+}
+
+.score_rule  .tab2 {
+    padding-top: 3%;
+    margin-top: 3%;
+}
+
+.score_rule  .tab3 {
+    padding-left: 4%;
+    padding-right: 4%;
+}

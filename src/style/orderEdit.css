@@ -1,0 +1,214 @@
+.oe_main {
+    width: 100%;
+    margin-bottom: 15%;
+}
+
+.oe_main .choose_all {
+    padding-top: 2%;
+    width: 100%;
+    padding-bottom: 6%;
+}
+
+.oe_main .choose_all .choose_all_l {
+    width: 6%;
+    float: left;
+    margin-left: 4%;
+}
+
+.oe_main .choose_all .choose_all_r {
+    float: left;
+    margin-left: 2%;
+    line-height: 170%;
+    font-size: 1.4em;
+}
+
+.oe_main .choose_all .finish_icon {
+    width: 4%;
+    float: left;
+    margin-left: 63%;
+    margin-top: 1%;
+}
+
+.oe_main .choose_all .finish {
+    float: left;
+    margin-left: 2%;
+    line-height: 170%;
+    font-size: 1.4em;
+}
+
+
+.oe_address_set {
+    position: relative;
+    background: #ffffff;
+    width: 100%;
+    padding: 4% 4% 4%;
+    margin-bottom: 4%;
+}
+
+.oe_contact {
+    font-size: 1.5em;
+}
+
+.oe_default {
+    color: #0582c8;
+    font-size: 0.6em;
+    border-radius: 25px;
+    border: 1px solid #0582c8;
+    margin-left: 4%;
+    padding: 0.5% 3%;
+    line-height: 100%;
+}
+
+.oe_mobile {
+    margin-left: 4%;
+}
+
+.oe_address {
+    margin-top: 2%;
+    font-size: 1.4em;
+    word-break: keep-all;
+}
+
+.oe_arrow {
+    position: absolute;
+    width: 3%;
+    right: 5%;
+    height: 100%;
+    top: 0;
+    background: url("../img/orderEdit/arrow_right.png") no-repeat center;
+    background-size: 100% auto;
+}
+
+.oe_items {
+    margin-top: 2%;
+    background: #ffffff;
+    padding: 2% 4%;
+    margin-bottom: 1px;
+}
+
+.oe_items_id {
+    color: #8b8b8b;
+    font-size: 1.3em;
+    padding: 2% 0;
+}
+
+.oe_items_line {
+    width: 100%;
+    height: 1px;
+    background: #d7d7d7;
+}
+
+.oe_items_c {
+    width: 100%;
+    overflow: hidden;
+}
+
+.oe_items_img {
+    float: left;
+    width: 25%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    padding-bottom: 25%;
+    background: url("../img/shoppingCart/shopping_img.png") no-repeat center;
+    background-size: 100% auto;
+}
+
+.oe_detail {
+    float: left;
+    width: 75%;
+}
+
+.oe_title {
+    margin-top: 4%;
+    font-size: 1.4em;
+    padding: 0 6%;
+}
+
+.oe_score {
+    float: left;
+    width: 44%;
+    margin-top: 5%;
+    margin-left: 6%;
+}
+
+.oe_score span {
+    font-size: 2.0em;
+}
+
+.oe_items_con {
+    float: left;
+    width: 50%;
+    overflow: hidden;
+    font-size: 1.2em;
+    margin-top: 5%;
+}
+
+.oe_con_decrease {
+    margin-left: 20%;
+    float: left;
+    padding: 4% 8%;
+    border: solid #cccccc;
+    border-width: 1px 0 1px 1px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.oe_con_num {
+    float: left;
+    padding: 4% 8%;
+    border: 1px solid #cccccc;
+}
+
+.oe_con_increase {
+    float: left;
+    padding: 4% 8%;
+    border: solid #cccccc;
+    border-width: 1px 1px 1px 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+}
+
+.oe_total {
+    font-size: 1.4em;
+    text-align: right;
+    background: #ffffff;
+    padding: 2% 4%;
+}
+
+.oe_total span {
+    margin: 0 2%;
+}
+
+.oe_end {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 14%;
+    background: #ffffff;
+    border-top: 1px solid #e4e4e4;
+}
+
+.oe_border {
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    left: 0%;
+    text-align: center;
+    font-size: 1.6em;
+    line-height: 300%;
+}
+.oe_border .integral{
+    font-size: 1.6em;
+}
+.commit_btn {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    right: 0%;
+    background-color: #0582c8;
+    color: white;
+    text-align: center;
+    font-size: 1.6em;
+    line-height: 300%;
+}

@@ -1,0 +1,79 @@
+<!--购物车-->
+<!--编辑状态下，mc_items_selection 及 mc_items_compressed 生效 ，列表左栏选择框出现在页面-->
+<div>
+    <div class="mc_main">
+        <!--编辑状态-->
+        <div class="choose_all" ng-show="myCollectionType=='edit'">
+            <div class="choose_all_l" ng-click="changeChosenAll();">
+            	<!--<img width="100%" src="../img/check.png" ng-show="isChosenAll">-->
+            	<img width="100%" src="../img/unCheck.png" ng-show="!isChosenAll">
+            </div>
+            <div class="choose_all_r" ng-click="changeChosenAll();">全选</div>
+            <div class="finish_icon" ng-click="changePageStatus('default');">
+            	<img width="100%" src="../img/finish.png">
+            </div>
+            <div class="finish">完成</div>
+        </div>
+        <!--默认状态-->
+        <div class="choose_all" ng-show="myCollectionType=='default'">
+            <div class="finish_icon" ng-click="changePageStatus('edit');">
+            	<img width="100%" src="../img/finish.png">
+            </div>
+            <div class="finish">编辑</div>
+        </div>
+        <div class="mc_shopping_list">
+            <div class="mc_items"  ng-repeat="item in renderData" ng-if="renderData.length">
+                <div ng-if="myCollectionType=='edit'" ng-class="item.isChosen ? 'mc_items_selection_check' : 'mc_items_selection_uncheck'" ng-click="changeChosen(item);"></div>
+                <div class="mc_items_compressed">
+                    <div class="mc_items_id">编号：{{item.productCode+(item.type=='1'?'(特惠)':'')}}</div>
+                    <div class="mc_items_c">
+                        <div class="mc_items_img"></div>
+                        <div class="mc_detail">
+                            <div class="mc_title">LK堂皇高弹安睡枕LK 堂皇高弹安 枕LK 堂皇高弹安睡枕</div>
+                            <div class="mc_d">
+                                <div class="mc_score">
+                                    <span class="blue" >40500 </span>积分
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mc_items">
+                <div class="mc_items_selection_uncheck"></div>
+                <!--<div class="mc_items_selection_uncheck"></div>-->
+                <div class="mc_items_compressed">
+                    <div class="mc_items_id">编号：ZSXN2017010510000336081（特惠）</div>
+                    <div class="mc_items_c">
+                        <div class="mc_items_img"></div>
+                        <div class="mc_detail">
+                            <div class="mc_title">{{item.productName}}</div>
+                            <div class="mc_d">
+                                <div class="mc_score">
+                                    <span class="blue" >40500 </span>积分
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="mc_end" ng-show="myCollectionType=='edit'">
+        <!--编辑状态-->
+        <div class="mc_end_edit">
+            <div class="mc_end_edit_l1">
+            	已选中<span>{{selectedCount}}</span>项
+            </div>
+            <div class="mc_end_edit_m1" ng-click="deleteProduct();">
+                <div class="mc_end_del_icon"></div>
+                <div class="mc_end_del">删除</div>
+            </div>
+            <div class="mc_end_edit_r1" ng-click="changePageStatus('default');">
+				完 成
+            </div>
+        </div>
+    </div>
+</div>

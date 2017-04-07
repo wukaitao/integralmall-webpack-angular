@@ -1,0 +1,98 @@
+
+.groupsA_problems{
+    font-size: 1.5em;
+}
+
+.groupsA_problems .fontA{
+    font-size: 0.95em;
+    padding: 0 4%;
+    color: #1372c8;
+}
+
+.groupsA_problems .fontC{
+     color: #666666;
+ }
+
+.groupsA_problems .title{
+    background-color: white;
+    padding: 2% 4%;
+}
+
+.groupsA_problems .line1{
+    border-top: 1px solid #d7d7d7;
+    width: 96%;
+    height: 0px;
+    /*background-color: #8b8b8b;*/
+    margin-left: 2%;
+
+}
+
+.groupsA_problems .line2{
+    width: 105%;
+    height: 1px;
+    border: 0;
+    background-color: #d7d7d7;
+    margin: 2% -5% 2%;
+}
+
+.groupsA_problems .bg_white{
+    background-color: white;
+}
+
+.groupsA_problems .mf5p{
+    margin-left: 5%;
+}
+
+.groupsA_problems .lh{
+    line-height: 120%;
+    font-size: 1.2em;
+    color: #666666;
+    padding: 4% 0;
+}
+
+.groupsA_problems ul{
+    margin: 0;
+    padding: 4.35% 0;
+    padding-left: 5%;
+}
+
+.groupsA_problems li{
+
+}
+
+.groupsA_problems .tab1_font{
+
+    padding: 0% 4% 4% 9%;
+    font-size: 0.95em;
+}
+
+.groupsA_problems .tab2_font{
+    padding: 0% 4% 4% 9%;
+    font-size: 0.95em;
+
+}
+
+.groupsA_problems .tab1{
+    background-color: white;
+    padding: 6% 4% 4%;
+    font-size: 1.15em !important;
+    color: #4a4a4a;
+}
+.groupsA_problems .tab2{
+    margin-top: 3%;
+
+    background-color: white;
+    padding: 6% 4% 4%;
+    font-size: 1.15em !important;
+    color: #4a4a4a;
+}
+.groupsA_problems .tab3{
+    padding: 0 4% 0 7%;
+}
+
+.groupsA_problems .attention{
+    line-height: 130% !important;
+    font-size: 1.2em;
+    padding: 4% 0;
+
+}

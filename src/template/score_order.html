@@ -1,0 +1,66 @@
+<!-- 积分订单-->
+<div class="score_order">
+    <div class="so_main">
+
+        <!--分类-->
+        <div class="so_address_set">
+            <div class="so_text" ng-class="action=='00'?'so_active blue':''" ng-click="changeType('00');">全部记录</div>
+            <div class="so_text" ng-class="action=='01'?'so_active blue':''" ng-click="changeType('01');">未支付</div>
+            <div class="so_text" ng-class="action=='02'?'so_active blue':''" ng-click="changeType('02');">审核中</div>
+            <div class="so_text" ng-class="action=='03'?'so_active blue':''" ng-click="changeType('03');">已发货</div>
+            <div class="so_text" ng-class="action=='04'?'so_active blue':''" ng-click="changeType('04');">已收货</div>
+            <div class="so_text" ng-class="action=='05'?'so_active blue':''" ng-click="changeType('05');">已取消</div>
+        </div>
+
+        <!--列表-->
+        <div class="so_shopping_list" ng-repeat="item in renderData" ng-if="renderData.length">
+            <div class="so_items">
+                <div class="so_items_number blue">
+                    <div class="" style="position: absolute;top: 0px;left: 0px;line-height: 2.5em">订单号：{{item.orderCode}}</div>
+                </div>
+                <div class="so_delete_icon"></div>
+                <div class="so_items_c">
+                    <div class="so_items_img">
+                        <img ng-src="{{item.imageUrl}}"/>
+                    </div>
+                    <div class="so_detail">
+                        <div class="so_title grey">{{item.productName}}</div>
+                        <div class="so_items_id grey">编号：{{item.productCode}}</div>
+                        <div class="so_amount titleGrey">X{{item.productAmount}}</div>
+                    </div>
+                </div>
+                <div class="so_items_explain">
+                    <div class="so_items_explain_r_text titleGrey">共1件商品 合计：{{item.scoreValue}}积分</div>
+                </div>
+                <div class="so_items_buttons">
+                    <div class="so_items_explain_l_text ">{{item.statusDesc}}</div>
+                    <div class="so_items_button confirm" ng-if="item.statusCode=='03'" ng-click="confirmReceipt(item);">
+                        确认收货
+                    </div>
+                    <div class="so_items_button" ng-click="toOrderDetailPath(item);">订单详情</div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="!renderData.length" style="line-height: 28px; text-align: center;"></div>
+
+        <div class="bottomLoading">
+            <div class="floatLeft loadingIcon"><img width="100%" src="../img/loadIcon.png" alt=""></div>
+            <div class="floatLeft loadingFont">加载中...</div>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    .so_address_set {
+        white-space: nowrap;
+    }
+
+    .so_items_img {
+        padding-bottom: 0 !important;
+        background: transparent !important;
+    }
+
+    .so_items_img img {
+        width: 100%;
+    }
+</style>

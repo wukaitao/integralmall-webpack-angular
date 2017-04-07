@@ -1,0 +1,262 @@
+
+.score_market_main {
+    width: 100%;
+    /*margin-bottom: 15%;*/
+}
+
+
+/*系统升级*/
+.score_market_main .SystemUpgrade{
+    display: none;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+}
+
+.score_market_main .SystemUpgrade img{
+    width: 20%;
+    margin: 50% auto 2%;
+}
+
+.score_market_main .SystemUpgrade .tips{
+   font-size: 1.5em;
+}
+
+/*系统升级*/
+
+
+
+.score_market_main .SystemNormal{
+    display: block;
+}
+
+/*横幅*/
+.score_market_banner {
+    padding-bottom: 40%;
+    background: url("../img/img3.png") no-repeat;
+    background-size: 100% auto;
+}
+
+.score_market_score_board{
+    padding: 1% 4% 4%;
+    background-color: white;
+}
+
+.score_market_score_icon {
+    position: absolute;
+    width: 4%;
+    left: 0%;
+    height: 100%;
+    top: 5%;
+    background: url("../img/jifen.png") no-repeat center;
+    background-size: 100% auto;
+}
+
+.score_market_arrow {
+    position: absolute;
+    width: 2%;
+    right: 0%;
+    height: 100%;
+    top: 0;
+    background: url("../img/orderEdit/arrow_right.png") no-repeat center;
+    background-size: 100% auto;
+}
+
+.score_market_text {
+    position: absolute;
+    width: 50%;
+    left: 6%;
+    top: 25%;
+    background-size: 100% auto;
+}
+
+.score_market_text .number{
+ font-size: 1.4em;
+
+}
+
+/*积分说明*/
+.score_market_address_set {
+    position: relative;
+    background: #ffffff;
+    width: 100%;
+    /*padding: 4% 4% 4%;*/
+    margin-bottom: 4%;
+    height: 3em;
+}
+
+/*导航*/
+.score_market_nav {
+    padding-bottom: 15%;
+}
+
+.score_market_nav_item {
+    float: left;
+    width: 25%;
+}
+
+.score_market_nav_item_icon1 {
+    background: url("../img/zhuanjifen.png") no-repeat center;
+    background-size: auto 80%;
+    height: 3em;
+}
+
+.score_market_nav_item_icon2 {
+    background: url("../img/duihuanzhongxin.png") no-repeat center;
+    background-size: auto 80%;
+    height: 3em;
+}
+
+.score_market_nav_item_icon3 {
+    background: url("../img/E_card.png") no-repeat center;
+    background-size: auto 80%;
+    height: 3em;
+}
+
+.score_market_nav_item_icon4 {
+    background: url("../img/jifen_dingdan.png") no-repeat center;
+    background-size: auto 80%;
+    height: 3em;
+}
+
+.score_market_nav_item_text {
+    text-align: center;
+    height: 2em;
+    line-height: 2em;
+    font-size: 1.2em;
+}
+
+.score_market_content {
+    margin-top: 10px;
+    padding: 2% 4%;
+    background-color: white;
+}
+
+/*小积分抽大奖*/
+.score_market_little_score {
+    position: relative;
+    background: #ffffff;
+    width: 100%;
+    height: 3em;
+}
+
+.score_market_little_score_text {
+    position: absolute;
+    width: 50%;
+    left: 2%;
+    top: 22%;
+    background-size: 100% auto;
+    font-size: 1.4em;
+}
+
+.score_market_little_score_product {
+    background-color: white;
+    /*padding: 5%;*/
+    padding-bottom: 30%;
+}
+
+
+.score_market_little_score_product_img {
+    float: left;
+    padding-bottom: 30%;
+    width: 49%;
+    margin-left: 1%;
+    position: relative;
+
+}
+
+.score_market_little_score_product .smlxp_l{
+    background: url("../img/img4.png") no-repeat center;
+    background-size: 100% auto;
+}
+.score_market_little_score_product .smlxp_r{
+    background: url("../img/img5.png") no-repeat center;
+    background-size: 100% auto;
+}
+
+.score_market_main .small_Font{
+    position: absolute;
+    top: 60%;
+    left: 4%;
+    line-height: 1.2em;
+    color:#545454;
+}
+
+.score_market_main .small_Font .number{
+   font-size: 1.6em;
+}
+
+/*热门推荐*/
+.score_market_hot_product {
+    background-color: white;
+    /*padding: 5%;*/
+    padding-bottom: 56%;
+    margin-bottom: 0%;
+}
+
+.score_market_hot_product_img {
+    position: relative;
+    float: left;
+    padding-bottom: 26%;
+    width: 49%;
+    margin-left: 1%;
+    margin-top: 1%;
+
+}
+
+.score_market_hot_product  .smhp_img1{
+    background: url("../img/img7.png") no-repeat center;
+    background-size: 100% auto;
+}
+
+.score_market_hot_product  .smhp_img2{
+    background: url("../img/img6.png") no-repeat center;
+    background-size: 100% auto;
+}
+.score_market_hot_product  .smhp_img3{
+    background: url("../img/img7.png") no-repeat center;
+    background-size: 100% auto;
+}
+.score_market_hot_product  .smhp_img4{
+    background: url("../img/img6.png") no-repeat center;
+    background-size: 100% auto;
+}
+
+
+/*积分天天赚*/
+
+/*常见问题 */
+.score_market_question {
+    position: relative;
+    width: 100%;
+    padding: 4% 4% 4%;
+}
+
+.score_market_question_text {
+    position: absolute;
+    text-align: right;
+    right: 2%;
+    height: 100%;
+    top: 32%;
+    background-size: 100% auto;
+  text-decoration: underline;
+    color: #5a5a5a;
+    font-size: 1.4em;
+}
+
+.score_market_little_score_product .smlsp_l{
+    background: url("../img/img2.png") no-repeat center;
+    background-size: 100% auto;
+}
+
+.score_market_little_score_product .smlsp_r{
+    background: url("../img/img1.png") no-repeat center;
+    background-size: 100% auto;
+}
+
+
+
+
+
+
+

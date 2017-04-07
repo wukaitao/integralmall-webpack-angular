@@ -1,0 +1,56 @@
+﻿{
+    "respCode": "00", 
+    "respDesc": "请求成功", 
+    "respData": [
+		{
+			"userName": "张**",
+			"mobile": "136****2010",
+			"productName": "50元话费充值卡"
+		},
+		{
+			"userName": "李**",
+			"mobile": "138****7551",
+			"productName": "100元京东购物券"
+		},
+		{
+			"userName": "王**",
+			"mobile": "157****0452",
+			"productName": "100元天虹购物卡"
+		},
+		{
+			"userName": "王**",
+			"mobile": "157****0452",
+			"productName": "100元天虹购物卡"
+		},
+		{
+			"userName": "王**",
+			"mobile": "157****0452",
+			"productName": "100元天虹购物卡"
+		},
+		{
+			"userName": "王**",
+			"mobile": "157****0452",
+			"productName": "100元天虹购物卡"
+		},
+		{
+			"userName": "王**",
+			"mobile": "157****0452",
+			"productName": "100元天虹购物卡"
+		},
+		{
+			"userName": "王**",
+			"mobile": "157****0452",
+			"productName": "100元天虹购物卡"
+		},
+		{
+			"userName": "王**",
+			"mobile": "157****0452",
+			"productName": "100元天虹购物卡"
+		},
+		{
+			"userName": "王**",
+			"mobile": "157****0452",
+			"productName": "100元天虹购物卡"
+		}
+	]
+}

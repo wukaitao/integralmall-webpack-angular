@@ -1,0 +1,352 @@
+.mc_main {
+    width: 100%;
+    margin-bottom: 15%;
+}
+
+.mc_main .choose_all {
+    width: 100%;
+    padding-bottom: 6%;
+    padding-top: 3%;
+}
+
+.mc_main .choose_all .choose_all_l {
+    width: 6%;
+    float: left;
+    margin-left: 4%;
+}
+
+.mc_main .choose_all .choose_all_r {
+    float: left;
+    margin-left: 2%;
+    line-height: 170%;
+    font-size: 1.4em;
+}
+
+.mc_main .choose_all .finish_icon {
+    width: 4%;
+    float: left;
+    margin-left: 63%;
+    margin-top: 1%;
+}
+
+.mc_main .choose_all .finish {
+    float: left;
+    margin-left: 2%;
+    line-height: 170%;
+    font-size: 1.4em;
+}
+
+.mc_address_set {
+    position: relative;
+    background: #ffffff;
+    width: 100%;
+    padding: 4% 4% 4%;
+    margin-bottom: 4%;
+}
+
+.mc_contact {
+    font-size: 1.5em;
+}
+
+.mc_default {
+    color: #0582c8;
+    font-size: 0.6em;
+    border-radius: 25px;
+    border: 1px solid #0582c8;
+    margin-left: 4%;
+    padding: 0.5% 3%;
+    line-height: 100%;
+}
+
+.mc_mobile {
+    margin-left: 4%;
+}
+
+.mc_address {
+    margin-top: 2%;
+    font-size: 1.4em;
+    word-break: keep-all;
+}
+
+.mc_arrow {
+    position: absolute;
+    width: 3%;
+    right: 12%;
+    height: 100%;
+    top: 0;
+    background: url("../img/orderEdit/arrow_right.png") no-repeat center;
+    background-size: 100% auto;
+}
+
+.mc_text {
+    position: absolute;
+    width: 8%;
+
+    right: 2%;
+    height: 100%;
+    top: 32%;
+    background-size: 100% auto;
+}
+
+.mc_items {
+    background: #ffffff;
+    padding: 2% 4%;
+    margin-bottom: 1px;
+    margin-top: 3%;
+    /*float: right;*/
+}
+
+.mc_items_selection_check {
+    float: left;
+    width: 2em;
+    height: 2em;
+    margin-top: 20%;
+    background-size: 100% !important;
+    background-color: white;
+    background: url("../img/my_collection/icon_default.png") no-repeat center;
+
+}
+.mc_items_selection_uncheck{
+    float: left;
+    width: 2em;
+    height: 2em;
+    margin-top: 20%;
+    background-size: 100% !important;
+    background-color: white;
+    background: url("../img/my_collection/unCheck.png") no-repeat center;
+
+}
+
+.mc_items_compressed {
+    width: 95%;
+    margin-left: 12%;
+}
+
+.mc_items_id {
+    color: #8b8b8b;
+    font-size: 1.3em;
+    padding: 4.58% 0;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.mc_items_line {
+    width: 100%;
+    height: 1px;
+    background: #d7d7d7;
+}
+
+.mc_items_c {
+    width: 100%;
+    overflow: hidden;
+}
+
+.mc_items_img {
+    float: left;
+    width: 25%;
+    margin-top: 4.6%;
+    margin-bottom: 4%;
+    padding-bottom: 25%;
+    background: url("../img/shoppingCart/shopping_img.png") no-repeat center;
+    background-size: 100% auto;
+   position: relative;
+}
+.mc_items_img img {
+    width: 100%;
+    height: 25%;
+    text-align: center;
+}
+.mc_items_img .tips {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.34);
+    color: white;
+}
+
+.mc_detail {
+    float: left;
+    width: 75%;
+    position: relative;
+}
+
+.mc_title {
+    margin-top: 6.1%;
+    font-size: 1.3em;
+    padding: 0 6%;
+}
+
+.mc_score {
+    width: 44%;
+    margin-top: 4%;
+    margin-left: 6%;
+}
+
+.mc_score span {
+    font-size: 2.0em;
+}
+
+.mc_items_con {
+    float: left;
+    width: 50%;
+    overflow: hidden;
+    font-size: 1.2em;
+    margin-top: 5%;
+}
+
+.mc_con_decrease {
+    margin-left: 20%;
+    float: left;
+    padding: 4% 8%;
+    border: solid #cccccc;
+    border-width: 1px 0 1px 1px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.mc_con_num {
+    float: left;
+    padding: 4% 8%;
+    border: 1px solid #cccccc;
+}
+
+.mc_con_increase {
+    float: left;
+    padding: 4% 8%;
+    border: solid #cccccc;
+    border-width: 1px 1px 1px 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+}
+
+.mc_total {
+    font-size: 1.4em;
+    text-align: right;
+    background: #ffffff;
+    padding: 2% 4%;
+}
+
+.mc_total span {
+    margin: 0 2%;
+}
+
+.mc_end {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 14%;
+    background: #ffffff;
+}
+
+.mc_border {
+    position: absolute;
+    width: 90%;
+    height: 70%;
+    top: 15%;
+    left: 5%;
+    border: 1px solid #0582c8;
+    border-radius: 25px;
+    text-align: center;
+    color: #0582c8;
+    line-height: 220%;
+    font-size: 1.6em;
+}
+
+.mc_end {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 14%;
+    background: #ffffff;
+}
+
+.mc_end_edit {
+}
+
+.mc_end_edit_l {
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    line-height: 360%;
+    left: 0;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.mc_end_edit_l span {
+    color: #0582c8;
+    font-size: 2.2em;
+}
+
+.mc_end_edit_r {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    left: 70%;
+    background: #0582c8;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.8em;
+    line-height: 280%;
+}
+
+.mc_end_edit_l1 {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    line-height: 360%;
+    left: 0;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.mc_end_edit_l1 span {
+    font-size: 1.4em;
+    color: #0582c8;
+    margin: 0 4%;
+}
+
+.mc_end_edit_m1 {
+    position: absolute;
+    width: 30%;
+    height: 70%;
+    line-height: 360%;
+    top: 15%;
+    border: solid #d7d7d7;
+    border-width: 0 0 0 1px;
+    left: 40%;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.mc_end_del_icon {
+    width: 16%;
+    height: 100%;
+    background: url("../img/addressManager/icon_del.png") no-repeat center;
+    background-size: 100% auto;
+    float: left;
+    margin-left: 20%;
+}
+
+.mc_end_del {
+    float: left;
+    height: 100%;
+    color: #0582c8;
+    font-size: 1.3em;
+    margin-left: 6%;
+    line-height: 200%;
+}
+
+.mc_end_edit_r1 {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    left: 70%;
+    background: #0582c8;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.8em;
+    line-height: 280%;
+}

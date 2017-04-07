@@ -1,0 +1,443 @@
+
+
+.groupsA_exchange {
+    font-size: 1.4em;
+    position: relative;
+}
+
+/*loading*/
+.groupsA_exchange .loading {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(12, 12, 12, 0.75);
+    text-align: center;
+    z-index: 11;
+    left: 0;
+    top: 0;
+}
+
+.groupsA_exchange .loading img {
+    margin-top: 70%;
+    width: 14%
+}
+
+/*loading*/
+
+.groupsA_exchange .toolMore {
+    position: absolute;
+    top: 13%;
+    right: 2%;
+    width: 35%;
+    z-index: 10;
+
+}
+
+.groupsA_exchange .toolMore .angle {
+    width: 13%;
+    margin-left: 80%;
+
+}
+
+.groupsA_exchange .toolMore .lists {
+    margin-top: -5%;
+    width: 100%;
+    z-index: 10;
+    background-color: white;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+
+}
+
+.groupsA_exchange .toolMore .lists .list {
+    height: 0;
+    padding-bottom: 36%;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.groupsA_exchange .toolMore .lists .list img {
+    width: 19%;
+    margin-left: 10%;
+    margin-top: 10%
+}
+
+.groupsA_exchange .toolMore .lists .list div {
+    margin-top: 10%;
+    margin-left: 5%;
+    font-size: 1.1em;
+
+}
+
+/*分类*/
+.groupsA_exchange .tool_tab1 {
+    position: absolute;
+    top: 27%;
+    left: 0%;
+    width: 100%;
+    z-index: 10;
+    background-color: white;
+    border-bottom: 1px solid #eaeaea;
+
+}
+
+.groupsA_exchange .tool_tab1 .category_lists {
+    /*background-color: white;*/
+    /*border-bottom: 1px solid #eaeaea;*/
+}
+
+.groupsA_exchange .tool_tab1 .category_lists .listIcon {
+    position: absolute;
+    top: 8%;
+    left: 3%;
+    height: 84%;
+
+}
+
+.groupsA_exchange .tool_tab1 .category_lists .listIcon img {
+    display: block;
+    height: 100%;
+}
+
+.groupsA_exchange .tool_tab1 .category_lists .listIcon2 {
+    width: 20%;
+    margin-left: 9%;
+    margin-top: 8%;
+    height: 0;
+}
+
+.groupsA_exchange .tool_tab1 .category_lists .listIcon2 img {
+    display: block;
+    width: 100%;
+}
+
+.groupsA_exchange .tool_tab1 .category_lists .listIcon3 {
+    width: 15%;
+    margin-left: 9%;
+    margin-top: 8%;
+    height: 0;
+}
+
+.groupsA_exchange .tool_tab1 .category_lists .listIcon3 img {
+    display: block;
+    width: 100%;
+}
+
+.groupsA_exchange .tool_tab1 .category_lists .listFont {
+    position: absolute;
+    right: 13%;
+    top: 31%;
+}
+
+.groupsA_exchange .tool_tab1 .category_lists .list {
+    float: left;
+    width: 33.3%;
+    padding: 0% 0 14%;
+    border-bottom: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    position: relative;
+}
+
+.groupsA_exchange .tool_tab1 .title {
+    padding: 3% 2% !important;
+    text-align: center;
+    border-bottom: 1px solid #eaeaea;
+}
+
+/*分类*/
+
+/*兑换量*/
+.groupsA_exchange .tool_tab2 {
+    position: absolute;
+    top: 27%;
+    left: 0%;
+    width: 100%;
+    z-index: 10;
+    padding-bottom: 5px;
+    background-color: white;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.groupsA_exchange .tool_tab2 {
+
+}
+
+/*兑换量*/
+
+/*积分*/
+.groupsA_exchange .tool_tab3 {
+    position: absolute;
+    top: 27%;
+    left: 0%;
+    width: 100%;
+    z-index: 10;
+    padding-bottom: 5px;
+    background-color: white;
+    border-bottom: 1px solid #eaeaea;
+
+}
+
+/*积分*/
+
+/*积分跨度*/
+.groupsA_exchange .tool_tab4 {
+    position: absolute;
+    top: 27%;
+    left: 0%;
+    width: 100%;
+    z-index: 10;
+    background-color: white;
+    color: #585858;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.groupsA_exchange .tool_tab4 .tool_tab4_width {
+    padding: 0 5%;
+}
+
+.groupsA_exchange .tool_tab4 .tool_tab4_width .gouIcon {
+    position: absolute;
+    right: 1%;
+    top: 40%;
+    width: 4%;
+}
+
+.groupsA_exchange .tool_tab4 .tool_tab4_width .gouIcon img {
+    width: 100%;
+}
+
+.groupsA_exchange .tool_tab4 .tool_tab4_width .list {
+    position: relative;
+    font-size: 0.9em;
+    padding: 3% 0% 8%;
+    border-bottom: 1px solid #ececec;
+}
+
+/*积分跨度*/
+
+.groupsA_exchange .floatLeft {
+    float: left;
+}
+
+.groupsA_exchange .ToolIcon {
+    margin-top: 8%;
+    width: 14%;
+    margin-left: 2%;
+}
+
+.groupsA_exchange .ToolIcon2 {
+    margin-top: 10%;
+    width: 14%;
+    margin-left: 2%;
+}
+
+.groupsA_exchange .SearchToolbar {
+    position: relative;
+    height: 0;
+    padding-bottom: 13%;
+    background-color: white;
+}
+
+.groupsA_exchange .SearchToolbar .integralIMG {
+    position: absolute;
+    top: 32%;
+    left: 2%;
+    width: 5%;
+    height: 40%;
+}
+
+.groupsA_exchange .SearchToolbar .integral {
+    font-weight: 800;
+    position: absolute;
+    top: 36%;
+    left: 8%;
+}
+
+.groupsA_exchange .SearchToolbar .search {
+    position: absolute;
+    top: 15%;
+    left: 23%;
+    height: 70%;
+    width: 67%;
+    background-color: #f3f3f3;
+    border-radius: 8px;
+}
+
+.groupsA_exchange .SearchToolbar .search .searchIcon {
+    position: absolute;
+    top: 23%;
+    left: 3%;
+    height: 55%;
+    width: 7%;
+
+}
+
+.groupsA_exchange .SearchToolbar .search input {
+    position: absolute;
+    top: 15%;
+    left: 12%;
+    height: 70%;
+    width: 85%;
+    background-color: #f3f3f3;
+    border: 0px;
+    outline: none;
+}
+
+.groupsA_exchange .SearchToolbar .more {
+    position: absolute;
+    top: 25%;
+    right: 3%;
+    width: 5%;
+}
+
+/*过滤工具栏*/
+.groupsA_exchange .filterToolbar {
+    color: #585858;
+    position: relative;
+    height: 0;
+    padding-bottom: 13%;
+    background-color: #f3f3f3;
+}
+
+.groupsA_exchange .filterToolbar .line {
+    position: absolute;
+    top: 17%;
+    height: 66%;
+    width: 1px;
+    background-color: #dedede;
+}
+
+.groupsA_exchange .filterToolbar .classification {
+    width: 25%;
+    position: absolute;
+    top: 33%;
+    left: 0%;
+    text-align: center;
+}
+
+.groupsA_exchange .filterToolbar .exchangeTheNumber {
+    width: 25%;
+    position: absolute;
+    top: 33%;
+    left: 25%;
+    text-align: center;
+
+}
+
+.groupsA_exchange .filterToolbar .integral {
+    width: 25%;
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    text-align: center;
+
+}
+
+.groupsA_exchange .filterToolbar .integralType {
+    width: 25%;
+    position: absolute;
+    top: 33%;
+    left: 75%;
+    text-align: center;
+
+}
+
+.groupsA_exchange .filterToolbar .integralType .iT {
+    width: 73%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/*过滤工具栏*/
+
+/*显示商品*/
+/*过滤工具栏*/
+.groupsA_exchange .showItems {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 70%;
+    background-color: #f3f3f3;
+}
+
+.groupsA_exchange .showItems .Item {
+    margin-top: 1px;
+    float: left;
+    position: relative;
+    width: 50%;
+    padding-bottom: 75%;
+    height: 0;
+    background-color: #ffffff;
+    border-right: 1px solid #e8e7e7;
+    border-bottom: 1px solid #e8e7e7;
+}
+
+.groupsA_exchange .showItems .Item .itemImg {
+    /*position: absolute;*/
+    height: 0;
+    padding-bottom: 100%;
+    width: 100%;
+    /*top: 0;*/
+    /*left:0;*/
+}
+
+.groupsA_exchange .showItems .Item .name {
+    font-size: 0.95em;
+    padding-left: 8.5%;
+    padding-right: 8.5%;
+    margin-top: 8.05%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+}
+
+.groupsA_exchange .showItems .Item .NeedPoints {
+    position: absolute;
+    top: 89%;
+    padding-left: 8.5%;
+}
+
+.groupsA_exchange .showItems .Item .NeedPoints .number {
+
+}
+
+.groupsA_exchange .showItems .Item .NeedPoints img {
+    margin-top: 5%;
+    margin-left: 10%;
+    width: 48%;
+}
+
+.groupsA_exchange .showItems .Item .NeedPoints .tips {
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    padding: 1% 3%;
+    font-size: 0.8em;
+}
+
+/*显示商品*/
+
+.groupsA_exchange .bottomLoading {
+    height: 0;
+    padding-bottom: 7%;
+    float: left;
+    padding-top: 3%;
+    width: 100%;
+    text-align: center;
+}
+
+.groupsA_exchange .bottomLoading .loadingIcon {
+    margin-top: 0.8%;
+    margin-left: 42%;
+    width: 4%;
+}
+
+.groupsA_exchange .bottomLoading .loadingFont {
+    margin-left: 2%;
+    color: #585858;
+
+}
