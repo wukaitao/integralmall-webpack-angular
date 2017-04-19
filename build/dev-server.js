@@ -7,7 +7,7 @@ const path = require('path');//路径中间件
 const express = require('express');//框架
 const opn = require('opn');//浏览器打开地址
 const app = express();//web框架
-const port = '8888';//端口
+const port = '1024';//端口
 const publicPath = 'http://localhost:'+port+'/';
 const baseWebpackConfig = require('./config');//基本打包配置
 
