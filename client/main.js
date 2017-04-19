@@ -6,12 +6,121 @@ require('./assets/css/main.css');
 
 const app = angular.module('indexApp',['ngRoute','ngResource']);
 app.config(['$routeProvider',function($routeProvider){
-	$routeProvider.when('/home',{
-		template: require('./assets/template/home.html'),
-		controller: require('./assets/controller/home.js')
-	}).when('/',{
-		template: require('./assets/template/home.html'),
-		controller: require('./assets/controller/home.js')
+	$routeProvider.
+	//积分商城
+	when('/integralMall',{
+		template: require('./assets/template/integralMall.html'),
+		controller: require('./assets/controller/integralMall.js')
+	}).
+	//我的积分
+	when('/myIntegral',{
+		template: require('./assets/template/myIntegral.html'),
+		controller: require('./assets/controller/myIntegral.js')
+	}).
+	//积分明细
+	when('/integralDetail',{
+		template: require('./assets/template/integralDetail.html'),
+		controller: require('./assets/controller/integralDetail.js')
+	}).
+	//积分规则
+	when('/integralRule',{
+		template: require('./assets/template/integralRule.html'),
+		controller: require('./assets/controller/integralRule.js')
+	}).
+	//赚积分
+	when('/earnIntegral',{
+		template: require('./assets/template/earnIntegral.html'),
+		controller: require('./assets/controller/earnIntegral.js')
+	}).
+	//兑换中心
+	when('/exchangeCenter',{
+		template: require('./assets/template/exchangeCenter.html'),
+		controller: require('./assets/controller/exchangeCenter.js')
+	}).
+	//兑换详情
+	when('/exchangeDetail',{
+		template: require('./assets/template/exchangeDetail.html'),
+		controller: require('./assets/controller/exchangeDetail.js')
+	}).
+	//填写订单
+	when('/fillOrder',{
+		template: require('./assets/template/fillOrder.html'),
+		controller: require('./assets/controller/fillOrder.js')
+	}).
+	//搜索
+	when('/search',{
+		template: require('./assets/template/search.html'),
+		controller: require('./assets/controller/search.js')
+	}).
+	//购物车
+	when('/shoppingCart',{
+		template: require('./assets/template/shoppingCart.html'),
+		controller: require('./assets/controller/shoppingCart.js')
+	}).
+	//地址管理
+	when('/addressManagement',{
+		template: require('./assets/template/addressManagement.html'),
+		controller: require('./assets/controller/addressManagement.js')
+	}).
+	//地址编辑
+	when('/addressEdit',{
+		template: require('./assets/template/addressEdit.html'),
+		controller: require('./assets/controller/addressEdit.js')
+	}).
+	//地址添加
+	when('/addressEdit',{
+		template: require('./assets/template/addressEdit.html'),
+		controller: require('./assets/controller/addressEdit.js')
+	}).
+	//收藏夹
+	when('/myCollection',{
+		template: require('./assets/template/myCollection.html'),
+		controller: require('./assets/controller/myCollection.js')
+	}).
+	//积分E卡
+	when('/integralEcard',{
+		template: require('./assets/template/integralEcard.html'),
+		controller: require('./assets/controller/integralEcard.js')
+	}).
+	//积分订单
+	when('/integralOrder',{
+		template: require('./assets/template/integralOrder.html'),
+		controller: require('./assets/controller/integralOrder.js')
+	}).
+	//订单详情
+	when('/orderDetail',{
+		template: require('./assets/template/orderDetail.html'),
+		controller: require('./assets/controller/orderDetail.js')
+	}).
+	//物流信息
+	when('/logistics',{
+		template: require('./assets/template/logistics.html'),
+		controller: require('./assets/controller/logistics.js')
+	}).
+	//积分抽奖
+	when('/integralDraw',{
+		template: require('./assets/template/integralDraw.html'),
+		controller: require('./assets/controller/integralDraw.js')
+	}).
+	//抽奖详情
+	when('/integralDrawDetail',{
+		template: require('./assets/template/integralDrawDetail.html'),
+		controller: require('./assets/controller/integralDrawDetail.js')
+	}).
+	//我的中奖记录
+	when('/myWinningRecord',{
+		template: require('./assets/template/myWinningRecord.html'),
+		controller: require('./assets/controller/myWinningRecord.js')
+	}).
+	//常见问题
+	when('/problem',{
+		template: require('./assets/template/problem.html'),
+		controller: require('./assets/controller/problem.js')
+	}).
+	//默认路由指向
+	when('/',{
+		template: require('./assets/template/integralMall.html'),
+		controller: require('./assets/controller/integralMall.js')
 	});
 }]);
 app.run(['$rootScope', 'form', '$timeout', 'createDialog', function($rootScope, form, $timeout, createDialog){
