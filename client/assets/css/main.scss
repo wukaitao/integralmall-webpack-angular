@@ -1,0 +1,35 @@
+/** color **/
+$blue: #0582c8;
+$red: #e6000f;
+$black: #4a4a4a;
+$lightGray: #f4f4f4;
+$darkGray: #ddd;
+/** shape **/
+.border-radius{
+    border-radius: 5px;
+}
+/** common **/
+html,body{
+    margin: 0px;
+    padding: 0px;
+    line-height: 28px;
+    background-color: #f0f0f0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: "微软雅黑";
+    font-size: 14px;
+}
+*{
+    box-sizing: border-box;
+}
+a,a:link,a:active,a:visited{
+    color: #0071e4;
+    text-decoration: none;
+}
+ul,li,p{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+/** page **/

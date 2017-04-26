@@ -2,7 +2,9 @@
 require('angular-route');
 require('angular-resource');
 require('./assets/lib/common.js');
-require('./assets/css/main.css');
+//require('./assets/css/main.css');
+require('./assets/css/font.css');
+require('./assets/css/main.scss');
 
 const app = angular.module('indexApp',['ngRoute','ngResource']);
 app.config(['$routeProvider',function($routeProvider){
