@@ -8,14 +8,15 @@
 </head>
 <body>
 <!--
-<div ng-if="form.showTopBar" class="topbar">
-	<span ng-if="form.showLeftBack" ng-click="form.backFn();" class="back"></span>
-	<h2>{{form.topBarTitle}}</h2>
-</div>
 <div ng-view ng-class="form.showTopBar ? 'slide-in container' : 'slide-in container noMarginTop'"></div>
 <div ng-if="form.showLoading" ng-include src="'template/loading.html'" class="loading"></div>
 <div ng-if="form.showTips" class="tips-animation tips-box">{{form.tipsTitle}}</div>
 -->
-<div ng-view></div>
+<header class="top-menu" ng-show="form.topBar.showTopBar">
+	<span class="position-left" ng-class="form.topBar.leftBtnType" ng-if="form.topBar.showLeftBtn" ng-click="form.leftBtnClick();"></span>
+	<h2>{{form.topBar.topBarTitle}}</h2>
+    <span class="position-right" ng-class="form.topBar.rightBtnType"  ng-if="form.topBar.showRightBtn" ng-click="form.rightBtnClick();"></span>
+</header>
+<div ng-view class="wrap"></div>
 </body>
 </html>

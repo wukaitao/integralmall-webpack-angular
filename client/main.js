@@ -1,10 +1,33 @@
 ﻿const angular = require('angular');
 require('angular-route');
 require('angular-resource');
+
 require('./assets/lib/common.js');
-//require('./assets/css/main.css');
 require('./assets/css/font.css');
 require('./assets/css/main.scss');
+
+//图片url通过require方式加载
+window.getImage = function(imageUrl){
+	if(imageUrl.indexOf('../')!=-1){
+		//前端路径
+		if(imageUrl.indexOf('.jpg')!=-1){
+			var path = imageUrl.slice(3,imageUrl.indexOf('.jpg'));
+			return require('./'+path+'.jpg');
+		}else if(imageUrl.indexOf('.png')!=-1){
+			var path = imageUrl.slice(3,imageUrl.indexOf('.png'));
+			return require('./'+path+'.png');
+		}else if(imageUrl.indexOf('.gif')!=-1){
+			var path = imageUrl.slice(3,imageUrl.indexOf('.gif'));
+			return require('./'+path+'.gif');
+		};
+	}else if(imageUrl.indexOf('http')!=-1){
+		//网络路径
+		return imageUrl;
+	}else{
+		//服务器路径
+		return '/pc-web/upload/'+imageUrl;
+	};
+};
 
 const app = angular.module('indexApp',['ngRoute','ngResource']);
 app.config(['$routeProvider',function($routeProvider){
@@ -125,117 +148,218 @@ app.config(['$routeProvider',function($routeProvider){
 		controller: require('./assets/controller/integralMall.js')
 	});
 }]);
-app.run(['$rootScope', 'form', '$timeout', 'createDialog', function($rootScope, form, $timeout, createDialog){
-	$rootScope.$on('$routeChangeStart', function(event, next, current){
-		$rootScope.form = form;
-		$rootScope.form.showLoading = true;
-	});
-	$rootScope.$on('$routeChangeError', function(event, next, current){
-		console.log('routeChangeError');
-	});
-	$rootScope.$on('$routeChangeSuccess', function(event, next, current){
-		$rootScope.form = form;
-		$rootScope.form.topBarTitle='';
-		$rootScope.form.showLoading = false;
-		$rootScope.form.tipsTitle = '';
-		$rootScope.form.showTips = false;
-		$rootScope.form.isShowTipsFirst = true;
-		//my test start
-		//console.log(window.top.getData());
-		//my test end
-	});
-	//my test start
-	window.getData = function(){
-		return $rootScope.form;
-	};
-	//my test end
-	$rootScope.showTips = function(title){
-		$rootScope.form.showTips = false;
-		if($rootScope.form.isShowTipsFirst){
-			$rootScope.form.tipsTitle = title;
-			$rootScope.form.showTips = true;
-			$rootScope.form.isShowTipsFirst = false;
-		}else{
-			$timeout(function(){
-				$rootScope.form.tipsTitle = title;
-				$rootScope.form.showTips = true;
+//路由切换
+app.run([
+	'$rootScope', '$location', 'form', 'createDialog', '$timeout', '$route',
+	function($rootScope, $location, form, createDialog, $timeout, $route){
+		//路由改变时加载loading界面
+	    $rootScope.$on('$routeChangeStart', function(event, next, current) {
+	        $rootScope.form = form;
+	        $rootScope.form.loading.show = true;
+	    });
+	    //路由切换错误
+	    $rootScope.$on('$routeChangeError', function(event, next, current){
+	        $rootScope.form.loading.show = false;
+	    });
+		//加载完成时初始化数据和隐藏loading界面
+	    $rootScope.$on('$routeChangeSuccess', function(event, next, current) {
+	        $rootScope.form = form;
+	        $rootScope.form.loading.show = false;
+	        $rootScope.form.topBar = {
+	        	'showTopBar': true,
+				'topBarTitle': '',
+				'showLeftBtn': false,
+				'leftBtnType': '',
+				'leftBtnTitle': '',
+				'showRightBtn': false,
+				'rightBtnType': '',
+				'rightBtnTitle': ''
+            };
+	        $rootScope.form.leftBtnClick = function(){
+		    	window.location.history=window.history.back();
+		    };
+	    });
+	    //toast提示弹窗
+		$rootScope.showToast = function(msg, callback, timeout){
+			var callback = callback || function(){};
+			if(msg && msg.length){
+				var timeout = timeout || 2000;
+				var htmlTemp = '<div class="popup_msg" id="toastPopup">' +
+							       '<div class="popup_main" style="height:18%;">' +
+							           '<div class="msg" style="word-wrap: break-word;">' + msg + '</div>' +
+							       '</div>' +
+							   '</div>';
+				$(htmlTemp).appendTo('body').fadeIn('fast',function(){
+					$timeout(function(){
+						$('#toastPopup').fadeOut('slow').remove();
+						callback.call(this);
+					},timeout);
+				});
+			};
+		};
+	    //警告弹窗
+		$rootScope.showAlert = function(msg, successFn){
+			var footerTemplate = '<div class="line"></div>' +
+					 '<div class="center_btn blue" ng-click="$modelSuccess();">{{$modelSuccessLabel}}</div>';
+			createDialog({
+				id: 'alertPopup',
+				title: '',
+				template: '<div class="text-center">' + msg + '</div>',
+				controller: null,
+				footerTemplate: footerTemplate,
+				success: {
+					label: '确定',
+					fn: function(){
+						if(successFn) successFn();
+					}
+				}
 			});
 		};
-	};
-	$rootScope.showConfirm = function(msg, successFn, cancelFn){
-		createDialog({
-			id: 'confirmPopup',
-			title: '',
-			template: '<div class="text-center">' + msg + '</div>',
-			controller: null,
-			footerShow: true,
-			success: {
-				label: '确定',
-				fn: function(){
-					if(successFn) successFn();
+	    //确认弹窗
+		$rootScope.showConfirm = function(msg, successFn, cancelFn, successLabel, cancelLabel){
+			createDialog({
+				id: 'confirmPopup',
+				title: '',
+				template: '<div class="text-center">' + msg + '</div>',
+				controller: null,
+				success: {
+					label: successLabel||'确定',
+					fn: function(){
+						if(successFn) successFn();
+					}
+				},
+				cancel: {
+					label: cancelLabel||'取消',
+					fn: function(){
+						if(cancelFn) cancelFn();
+					}
 				}
-			},
-			cancel: {
-				label: '取消',
-				fn: function(){
-					if(cancelFn) cancelFn();
-				}
-			}
-		});
+			});
+		};
+	}
+]);
+//路由传参
+app.factory('form',['$location',function($location){
+	return {
+	    topBar: {
+	    	'showTopBar': true,
+	        'topBarTitle': '',
+	        'showLeftBtn': false,
+	        'leftBtnType': '',
+	        'leftBtnTitle': '',
+	        'showRightBtn': false,
+	        'rightBtnType': '',
+	        'rightBtnTitle': ''
+	    },
+	    isRequesting: false,
+	    loading: {
+	    	show: false,
+	    	message: '加载中...'
+	    },
+	    leftBtnClick: function(){
+	    	window.location.history=window.history.back();
+	    },
+	    rightBtnClick: function(){
+	    },
+	    goPath: function(path){
+			$location.path(path);
+	    }
 	};
 }]);
-app.factory('resourceService', function($resource){
-	return $resource('request/:api.json',{},{
-		query: {method: 'get',params: {api: 'form'},isArray: true}
-	});
-});
-app.factory('form', function(){
-	return {
-		loadingText: '加载中...',
-		showLoading: false,
-		showTopBar: true,
-		showLeftBack: true,
-		topBarTitle: '',
-		backFn: function(){
-			window.history.back();
-		}
-	};
-});
-app.factory('baseDataService', ['$http', '$q', 'form', function($http, $q, form){
+//http请求
+app.factory('baseDataService', ['$rootScope', '$http', '$q', 'form', 'createDialog', function($rootScope, $http, $q, form, createDialog){
+	//调试接口写入cookie
+	//setCookie('UID','1071913');
 	var service = {};
 	service.originalHttp = function(url, param, config){
-		var url = url || '';
-		var param = param || null;
+		var url = url ? apiPath+url : '';
+		var param = param ? {
+			param: Base64.encode(JSON.stringify(param))
+		} : null;
 		var config = config && typeof config == 'object' ? config : {};
+		var isDisabledRepeatedly = config.isDisabledRepeatedly || false;
 		var method = config.method || 'post';
-		var headers = config.headers || {
-			'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-			'X-Requested-With': 'XMLHttpRequest'
+		var timeout = config.timeout || 60000;
+		var dataType = config.dataType || 'json';
+		var async = config.async==undefined ? true : config.async;
+		var cache = config.cache==undefined ? true : config.cache;
+		var beforeSend = config.beforeSend || function(){};
+		var complete = config.complete || function(){};
+		var contentType = config.contentType || 'application/x-www-form-urlencoded';
+		if(isDisabledRepeatedly){
+			if(form.isRequesting) return;
+			form.isRequesting = true;
 		};
-		var cache = config.cache || true;
-		var msg = config.msg || '加载中...';
 		var defer = $q.defer();
 		var promise = defer.promise;
-		$http({method: method,params: param,url: url,cache: cache}).success(function(data){
-			defer.resolve(data);
-		}).error(function(data){
-			defer.reject(data);
-		});
+		var option = {
+				type: method,
+				data: param,
+				url: url,
+				timeout: timeout,
+				dataType: dataType,
+				async: async,
+				cache: cache,
+				contentType: contentType,
+				beforeSend: beforeSend,
+				complete: complete,
+				success: function(data){
+					if(data.respCode=='00'){
+						//请求成功
+					}else if(data.respCode=='01'){
+						//登录信息已失效，请重新登录
+						var path = window.location.href;
+						createDialog({
+							id: 'noLogin',
+							template: '登录信息已失效，请重新登录',
+							success: {
+								label: '登录',
+								fn: function(){
+									window.location.href = 'http://member-sit.test-cignacmb.com/pc-member/login.xhtml?callback='+path;
+								}
+							},
+							cancel: {
+								label: '取消',
+								fn: function(){
+								}
+							}
+						});
+					}else if(data.respCode=='02'){
+						//传输参数问题(包含参数非空、参数格式)
+						$rootScope.showAlert('传输参数问题(包含参数非空、参数格式)');
+					}else if(data.respCode=='99'){
+						//系统异常
+						$rootScope.showAlert('系统异常');
+					};
+					isDisabledRepeatedly && (form.isRequesting=false);
+					defer.resolve(data);
+				},
+				error: function(err){
+					$rootScope.showAlert('网络错误.');
+					isDisabledRepeatedly && (form.isRequesting=false);
+					defer.reject(err);
+				}
+			};
+		$.ajax(option);
 		return promise;
 	};
 	service.http = function(url, param, config){
-		form.showLoading = true;
-		form.loadingText = config && typeof config == 'object' && config.msg ? config.msg : '加载中...';
+		form.loading.message = config.message || form.loading.message;
+		form.loading.show = true;
+		form.loading.isHttp = true;
 		var promise = this.originalHttp(url, param, config);
 		promise.then(function(data){
-			form.showLoading = false;
+			form.loading.show = false;
+			form.loading.isHttp = false;
 		},function(error){
-			form.showLoading = false;
+			form.loading.show = false;
+			form.loading.isHttp = false;
 		});
 		return promise;
 	};
 	return service;
 }]);
+//弹窗
 app.factory('createDialog',['$compile','$rootScope','$controller','$timeout',function($compile,$rootScope,$controller,$timeout){
 	var defaultOptions = {
 		id: null,
@@ -345,32 +469,50 @@ app.factory('createDialog',['$compile','$rootScope','$controller','$timeout',fun
 		hideScroll(true);
 	};
 }]);
-app.directive('showContent',function(){
-	return {
-		restrict: 'A',
-		replace: false,
-		link: function(scope, element, attr){
-			$(element).click(function(){
-				if($(this).is('.show-content')){
-					$(this).removeClass('show-content').addClass('hidden-content').next().slideUp();
-				}else{
-					$(this).parent().find('dt').removeClass('show-content').addClass('hidden-content').end().find('dd').slideUp().end().end()
-						   .removeClass('hidden-content').addClass('show-content').next().slideDown();
+//格式化数字
+app.filter('formatCount',function(){
+	return function(number){
+		var number = ''+number;
+		if(number.indexOf('.')!=-1){
+			//有小数点
+			var integer = number.split('.')[0];
+			var decimal = number.split('.')[1];
+			if(integer.length>3){
+				var remainder=integer.length%3;
+				var count = parseInt(integer.length/3);
+				var list = [];
+				if(remainder!=0){
+					list.push(integer.substr(0,remainder));
+					integer = integer.substr(remainder);
 				};
-			});
-		}
+				for(var i=0;i<count;i++){
+					list.push(integer.substr(0,3));
+					integer = integer.substr(3);
+				};
+				integer = list.join(',');
+			};
+			return integer + '.' + decimal;
+		}else{
+			//无小数点
+			if(number.length>3){
+				var remainder=number.length%3;
+				var count = parseInt(number.length/3);
+				var list = [];
+				if(remainder!=0){
+					list.push(number.substr(0,remainder));
+					number = number.substr(remainder);
+				};
+				for(var i=0;i<count;i++){
+					list.push(number.substr(0,3));
+					number = number.substr(3);
+				};
+				number = list.join(',');
+			};
+			return number;
+		};
 	};
 });
-app.directive('renderHtml',function(){
-	return {
-		restrict: 'A',
-		replace: false,
-		link: function(scope, element, attr){
-			var htmlTemp = scope.$eval(attr.renderHtml);
-			$(element).html(htmlTemp);
-		}
-	};
-});
+//转场效果
 app.directive('sidebox',function(){
 	return {
 		restrict: 'EA',

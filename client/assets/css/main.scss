@@ -1,4 +1,5 @@
 /** color **/
+$white: #fff;
 $blue: #0582c8;
 $red: #e6000f;
 $black: #4a4a4a;
@@ -8,15 +9,18 @@ $darkGray: #ddd;
 .border-radius{
     border-radius: 5px;
 }
+.to-more:after{
+    float: right;
+    content: '\e315';
+    font-family: 'icomoon';
+    font-size: 18px;
+}
 /** common **/
 html,body{
     margin: 0px;
     padding: 0px;
     line-height: 28px;
-    background-color: #f0f0f0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
+    background-color: $white;
     font-family: "微软雅黑";
     font-size: 14px;
 }
@@ -24,7 +28,7 @@ html,body{
     box-sizing: border-box;
 }
 a,a:link,a:active,a:visited{
-    color: #0071e4;
+    color: $black;
     text-decoration: none;
 }
 ul,li,p{
@@ -32,4 +36,60 @@ ul,li,p{
     padding: 0px;
     list-style: none;
 }
+h1,h2,h3,h4,h5,h6{
+    margin: 0px;
+    padding: 0px;
+    font-weight: normal;
+}
+a,input,select,textarea,button,img{
+    border: none;
+    outline: none;
+    vertical-align: middle;
+}
+/** layout **/
+.top-menu{
+    height: 42px;
+    line-height: 42px;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    z-index: 5;
+    background-color: $white;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+    h2{
+        text-align: center;
+    }
+    .position-left{
+        position: absolute;
+        left: 5px;
+        display: inline-block;
+    }
+    .position-right{
+        position: absolute;
+        right: 5px;
+        display: inline-block;
+    }
+    .icon{
+        font-size: 28px;
+        margin: 7px 0;
+    }
+}
+.wrap{
+    margin-top: 42px;
+}
 /** page **/
+.integral-mall{
+    .banner{
+        img{
+            width: 100%;
+        }
+    }
+    .total{
+        padding: 0px 10px;
+        line-height: 32px;
+        span{
+            color: $blue;
+        }
+    }
+}
