@@ -2,21 +2,21 @@
 	<!-- 积分概览 -->
 	<div class="total">
 		<div class="total-tab">
-			<span>可用积分</span>
-			<span>{{'14,587'}}</span>
+			<span class="desc">可用积分</span>
+			<span class="count">{{'14,587'}}</span>
 		</div>
 		<div class="total-tab">
-			<span>消费积分</span>
-			<span>{{'10,573'}}</span>
+			<span class="desc">消费积分</span>
+			<span class="count">{{'10,573'}}</span>
 		</div>
 	</div>
 	<!-- 积分月份列表 -->
 	<div class="list">
 		<dl class="list-item">
-			<dt>{{'2017-04'}}</dt>
-			<dd>
+			<dt class="to-show">{{'2017-04'}}</dt>
+			<dd ng-if="true">
 				<ul>
-					<li>
+					<li class="light">
 						<span class="date">03-10</span>
 						<span class="name">签到有喜</span>
 						<span class="count">+50</span>
@@ -24,9 +24,9 @@
 					<li>
 						<span class="date">03-08</span>
 						<span class="name">抽奖活动</span>
-						<span class="count">+150</span>
+						<span class="count">-150</span>
 					</li>
-					<li>
+					<li class="light">
 						<span class="date">03-07</span>
 						<span class="name">签到有喜</span>
 						<span class="count">+50</span>
@@ -40,24 +40,24 @@
 			</dd>
 		</dl>
 		<dl class="list-item">
-			<dt>{{'2017-03'}}</dt>
-			<dd></dd>
+			<dt class="to-more">{{'2017-03'}}</dt>
+			<dd ng-if="false"></dd>
 		</dl>
 		<dl class="list-item">
-			<dt>{{'2017-02'}}</dt>
-			<dd></dd>
+			<dt class="to-more">{{'2017-02'}}</dt>
+			<dd ng-if="false"></dd>
 		</dl>
 		<dl class="list-item">
-			<dt>{{'2017-01'}}</dt>
-			<dd></dd>
+			<dt class="to-more">{{'2017-01'}}</dt>
+			<dd ng-if="false"></dd>
 		</dl>
 		<dl class="list-item">
-			<dt>{{'2016-12'}}</dt>
-			<dd></dd>
+			<dt class="to-more">{{'2016-12'}}</dt>
+			<dd ng-if="false"></dd>
 		</dl>
 		<dl class="list-item">
-			<dt>{{'2016-11'}}</dt>
-			<dd></dd>
+			<dt class="to-more">{{'2016-11'}}</dt>
+			<dd ng-if="false"></dd>
 		</dl>
 	</div>
 </div>

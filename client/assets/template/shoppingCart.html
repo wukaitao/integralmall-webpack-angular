@@ -2,30 +2,30 @@
 	<!-- 操作  -->
 	<div class="top">
 		<span class="choose">
-			<i class="icon"></i>全选
+			<i class="icon icon-circle-check"></i>全选
 		</span>
 		<span class="status">
-			<i class="icon"></i>编辑
+			<i class="icon icon-mode_edit"></i>编辑
 		</span>
 	</div>
-	<div class="top" style="display: none;">
+	<div class="top" ng-if="false">
 		<span class="choose">
-			<i class="icon"></i>全选
+			<i class="icon icon-circle-check"></i>全选
 		</span>
 		<span class="status">
-			<i class="icon"></i>完成
+			<i class="icon icon-exit_to_app"></i>完成
 		</span>
 	</div>
 	<!-- 购物车列表 -->
 	<div class="product">
 		<div class="product-item">
 			<div class="product-left">
-				<i class="icon"></i>
+				<i class="icon icon-circle-check"></i>
 			</div>
 			<div class="product-right">
 				<div class="product-title">编号：{{'SZ20170422142535'}}{{'特惠'}}</div>
 				<div class="product-content">
-					<img src="../../../src/img/shopping_img.png"/>
+					<img src="../images//upload/image-product.png"/>
 					<div class="name-integral-counter">
 						<div class="name">
 							{{'贝德玛（Bioderma）舒妍洁肤液500ml卸妆水（粉水 卸妆 眼唇 舒缓 保湿）'}}
@@ -44,12 +44,12 @@
 		</div>
 		<div class="product-item">
 			<div class="product-left">
-				<i class="icon"></i>
+				<i class="icon icon-circle-check"></i>
 			</div>
 			<div class="product-right">
 				<div class="product-title">编号：{{'SZ20170422142535'}}{{'特惠'}}</div>
 				<div class="product-content">
-					<img src="../../../src/img/shopping_img.png"/>
+					<img src="../images//upload/image-product.png"/>
 					<div class="name-integral-counter">
 						<div class="name">
 							{{'贝德玛（Bioderma）舒妍洁肤液500ml卸妆水（粉水 卸妆 眼唇 舒缓 保湿）'}}
@@ -72,19 +72,19 @@
 		<!-- 非编辑状态 -->
 		<div>
 			<span class="operation-tab">
-				合计：{{'201520'}}积分
+				合计：<strong>{{'201520'}}</strong>积分
 			</span>
-			<span class="operation-tab">去结算</span>
+			<span class="operation-tab pay">去结算</span>
 		</div>
 		<!-- 编辑状态 -->
 		<div ng-show="false">
 			<span class="operation-tab">
-				已选中：{{'2'}}项
+				已选中：<strong>{{'2'}}</strong>项
 			</span>
-			<span class="operation-tab">
-				<i class="icon"></i>删除
+			<span class="operation-tab delete">
+				<i class="icon icon-local_shipping"></i>删除
 			</span>
-			<span class="operation-tab">完成</span>
+			<span class="operation-tab complete">完成</span>
 		</div>
 	</div>
 </div>
