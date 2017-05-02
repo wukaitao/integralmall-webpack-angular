@@ -1202,3 +1202,134 @@ a,input,select,textarea,button,img,span{
         }
     }
 }
+.integral-ecard{
+    .form{
+        padding: 5px 10px;
+        .form-item{
+            line-height: 28px;
+            label{
+                display: block;
+            }
+            .text{
+                display: block;
+                border-bottom: 1px solid $lightGray;
+                input{
+                    width: 100%;
+                    height: 28px;
+                    line-height: 28px;
+                    padding: 0px 2px;
+                    border: none;
+                }
+            }
+        }
+    }
+    .btn-area{
+        .btn{
+            width: 60%;
+            height: 38px;
+            line-height: 38px;
+            text-align: center;
+            color: $white;
+            font-size: 16px;
+            margin: 30px 20% 20px;
+            border-radius: 19px;
+            border: none;
+            background-color: $blue;
+        }
+    }
+}
+.integral-order{
+    .status{
+        display: table;
+        width: 100%;
+        line-height: 38px;
+        text-align: center;
+        table-layout: fixed;
+        background-color: $lightGray;
+        .status-tab{
+            display: table-cell;
+            &.selected{
+                color: $blue;
+                border-bottom: 2px solid $blue;
+            }
+        }
+    }
+    .order{
+        background-color: $lightGray;
+        .order-item{
+            margin-bottom: 8px;
+            padding: 0px 10px;
+            background-color: $white;
+            .order-code{
+                line-height: 38px;
+                color: $darkGray;
+                border-bottom: 1px solid $lightGray;
+            }
+            .image-name-code-count{
+                display: inline-block;
+                width: 100%;
+                clear: both;
+                img{
+                    float: left;
+                    margin: 5px 0px;
+                    width: 80px;
+                    height: 80px;
+                }
+                .name-code{
+                    display: block;
+                    margin: 9px 30px 9px 90px;
+                    .name{
+                        display: block;
+                        line-height: 24px;
+                    }
+                    .code{
+                        display: block;
+                        line-height: 24px;
+                    }
+                }
+                .count{
+                    display: inline-block;
+                    float: right;
+                    margin: 5px 0px;
+                    width: 30px;
+                    height: 80px;
+                    text-align: center;
+                    line-height: 80px;
+                }
+            }
+            .total{
+                line-height: 28px;
+                border-bottom: 1px solid $lightGray;
+            }
+            .status-viewlogistics-confirmreceive{
+                height: 38px;
+                line-height: 38px;
+                .order-status{
+                    color: $red;
+                    &.complete{
+                        color: $blue;
+                    }
+                }
+                .btn{
+                    display: inline-block;
+                    float: right;
+                    height: 28px;
+                    line-height: 28px;
+                    margin: 5px 0px 5px 5px;
+                    padding: 0px 10px;
+                    border-radius: 14px;
+                    &.viewlogistics{
+                        color: $blue;
+                        border: 1px solid $blue;
+                        background-color: $white;
+                    }
+                    &.confirmreceive{
+                        color: $white;
+                        border: 1px solid $blue;
+                        background-color: $blue;
+                    }
+                }
+            }
+        }
+    }
+}
