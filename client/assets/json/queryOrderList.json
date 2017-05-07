@@ -1,6 +1,50 @@
-﻿﻿{
+﻿{
     "respCode": "00", 
     "respDesc": "请求成功", 
-    "respData": {
-    }
+    "respData": [
+		{
+			"orderCode": "OC001",
+			"productCode": "PD001",
+			"productName": "苹果手机A",
+			"imageUrl": "../assets/images/upload/image-product.png",
+			"productAmount": "1",
+			"scoreValue": "7999",
+			"statusCode": "06",
+			"statusDesc": "已取消",
+			"orderDate": "2017-02-28 13:25:36"
+		},
+		{
+			"orderCode": "OC002",
+			"productCode": "PD002",
+			"productName": "苹果手机B",
+			"imageUrl": "../assets/images/upload/image-product.png",
+			"productAmount": "2",
+			"scoreValue": "7999",
+			"statusCode": "04",
+			"statusDesc": "已发货",
+			"orderDate": "2017-01-08 17:25:36"
+		},
+		{
+			"orderCode": "OC003",
+			"productCode": "PD003",
+			"productName": "苹果手机C",
+			"imageUrl": "../assets/images/upload/image-product.png",
+			"productAmount": "1",
+			"scoreValue": "7999",
+			"statusCode": "05",
+			"statusDesc": "已收货",
+			"orderDate": "2016-10-22 20:08:49"
+		},
+		{
+			"orderCode": "OC004",
+			"productCode": "PD004",
+			"productName": "苹果手机D",
+			"imageUrl": "../assets/images/upload/image-product.png",
+			"productAmount": "1",
+			"scoreValue": "7999",
+			"statusCode": "03",
+			"statusDesc": "审核中",
+			"orderDate": "2016-10-22 20:08:49"
+		}
+	]
 }

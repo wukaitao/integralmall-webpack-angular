@@ -2,20 +2,25 @@
 	<!-- 表单 -->
 	<ul class="form">
 		<li class="form-item">
-			<label>卡号：</label>
+			<label>请输入卡号：</label>
 			<span class="text">
-				<input type="text" autocomplete="off" placeholder="请输入16位卡号,不区分大小写"/>
+				<input type="text" autocomplete="off" placeholder="请输入16位卡号,不区分大小写" maxlength="16" 
+				ng-model="cardCode" ng-keyup="filterCardCode();" ng-blur="initCheckCard=false;checkCardCode();"/>
 			</span>
+			<div class="error" ng-if="!initCheckCard&&isErrorCheckCardCode">{{errorMessageCardCode}}</div>
 		</li>
 		<li class="form-item">
-			<label>验证码：</label>
+			<label>请输入图片验证码：</label>
 			<span class="text">
-				<input type="text" autocomplete="off" placeholder="请输入4位验证码"/>
+				<input type="text" autocomplete="off" placeholder="请输入4位验证码" maxlength="4" 
+				ng-model="imageCode" ng-keyup="filterImageCode();" ng-blur="initCheckImage=false;checkImageCode();"/>
+				<img ng-click="getImageCodeImage();" ng-src="{{imageCodeImage}}">
 			</span>
+			<div class="error" ng-if="!initCheckImage&&isErrorCheckImageCode">{{errorMessageImageCode}}</div>
 		</li>
 	</ul>
 	<!-- 兑换按钮 -->
 	<div class="btn-area">
-		<button class="btn">兑换</button>
+		<button class="btn" ng-class="isErrorCheckCardCode||isErrorCheckImageCode?'disabled':''" ng-click="exchange();">兑换</button>
 	</div>
 </div>

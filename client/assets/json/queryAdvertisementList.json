@@ -1,0 +1,137 @@
+﻿{
+    "respCode": "00", 
+    "respDesc": "请求成功", 
+    "respData": {
+        "totalScore":"50000",
+        "bannerList": [
+			{
+				"advertType":"A001",
+				"advertName":"积分商城上线了",
+				"imageUrl":"../assets/images/upload/image-banner.png",
+				"linkUrl":"exchangeCenter", 
+				"isInside":"01", 
+				"sortNo": "1"
+			},
+			{
+				"advertType":"A001",
+				"advertName":"测试",
+				"imageUrl":"../assets/images/upload/image-banner.png",
+				"linkUrl":"exchangeCenter", 
+				"isInside":"01", 
+				"sortNo": "15"
+			},
+			{
+				"advertType":"A001",
+				"advertName":"积分商城上线了",
+				"imageUrl":"../assets/images/upload/image-banner.png",
+				"linkUrl":"exchangeDetail/PD001", 
+				"isInside":"01", 
+				"sortNo": "2"
+			},
+			{
+				"advertType":"A002",
+				"advertName":"积分奖区",
+				"imageUrl":"../assets/images/upload/image-banner-integralDraw-one.png",
+				"linkUrl":"integralDrawDetail/PD002", 
+				"isInside":"01", 
+				"sortNo": "3"
+			},
+			{
+				"advertType":"A003",
+				"advertName":"爱奇艺VIP黄金会员",
+				"imageUrl":"../assets/images/upload/image-banner-hot-one.png",
+				"linkUrl":"http://www.guahao.com/", 
+				"isInside":"00", 
+				"sortNo": "4"
+			},
+			{
+				"advertType":"A004",
+				"advertName":"签到有惊喜 天天有惊喜",
+				"imageUrl":"../assets/images/upload/image-banner-earnIntegral-one.png",
+				"linkUrl":"earnIntegral", 
+				"isInside":"01", 
+				"sortNo": "5"
+			},
+			{
+				"advertType":"A005",
+				"advertName":"积分抽奖-99积分兑好礼",
+				"imageUrl":"../assets/images/upload/image-banner-more-integralDraw.png",
+				"linkUrl":"integralDraw", 
+				"isInside":"01", 
+				"sortNo": "6"
+			},
+			{
+				"advertType":"A002",
+				"advertName":"积分奖区",
+				"imageUrl":"../assets/images/upload/image-banner-integralDraw-two.png",
+				"linkUrl":"http://www.guahao.com/", 
+				"isInside":"00", 
+				"sortNo": "7"
+			},
+			{
+				"advertType":"A003",
+				"advertName":"优酷土豆黄金会员",
+				"imageUrl":"../assets/images/upload/image-banner-hot-two.png",
+				"linkUrl":"http://www.guahao.com/", 
+				"isInside":"00", 
+				"sortNo": "8"
+			},
+			{
+				"advertType":"A004",
+				"advertName":"感恩回馈 积分大放送",
+				"imageUrl":"../assets/images/upload/image-banner-earnIntegral-two.png",
+				"linkUrl":"earnIntegral", 
+				"isInside":"01", 
+				"sortNo": "9"
+			},
+			{
+				"advertType":"A003",
+				"advertName":"爱奇艺VIP黄金会员",
+				"imageUrl":"../assets/images/upload/image-banner-hot-one.png",
+				"linkUrl":"http://www.baidu.com/", 
+				"isInside":"00", 
+				"sortNo": "11"
+			},
+			{
+				"advertType":"A003",
+				"advertName":"优酷土豆黄金会员",
+				"imageUrl":"../assets/images/upload/image-banner-hot-two.png",
+				"linkUrl":"http://www.guahao.com/", 
+				"isInside":"00", 
+				"sortNo": "12"
+			},
+			{
+				"advertType":"A005",
+				"advertName":"积分兑换-花积分兑好礼",
+				"imageUrl":"../assets/images/upload/image-banner-more-exchangeCenter.png",
+				"linkUrl":"exchangeCenter", 
+				"isInside":"01", 
+				"sortNo": "13"
+			},
+			{
+				"advertType":"A005",
+				"advertName":"每日签到-签到赢积分",
+				"imageUrl":"../assets/images/upload/image-banner-more-sign.png",
+				"linkUrl":"earnIntegral", 
+				"isInside":"01", 
+				"sortNo": "14"
+			},
+			{
+				"advertType":"A006",
+				"advertName":"双十一活动大放送",
+				"imageUrl":"../assets/images/upload/image-banner-integralDraw-two.png",
+				"linkUrl":"exchangeCenter", 
+				"isInside":"01", 
+				"sortNo": "15"
+			},
+			{
+				"advertType":"A006",
+				"advertName":"抽油烟机",
+				"imageUrl":"../assets/images/upload/image-banner-integralDraw-one.png",
+				"linkUrl":"exchangeDetail/PD003", 
+				"isInside":"01", 
+				"sortNo": "16"
+			}
+		]
+    }
+}

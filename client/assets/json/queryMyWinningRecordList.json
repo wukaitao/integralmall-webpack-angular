@@ -1,0 +1,89 @@
+﻿{
+    "respCode": "00", 
+    "respDesc": "请求成功", 
+    "respData": {
+		"totalCount": "10",
+		"rewardList": [
+			{
+				"id": "11",
+				"imageUrl": "../assets/images/upload/image-product.png",
+				"productCode": "PD001",
+				"productName": "苹果手机A",
+				"statusCode": "02",
+				"createDate": "2017-02-23 21:15:08"
+			},
+			{
+				"id": "10",
+				"imageUrl": "../assets/images/upload/image-product.png",
+				"productCode": "PD002",
+				"productName": "苹果手机B",
+				"statusCode": "02",
+				"createDate": "2016-12-08 15:10:47"
+			},
+			{
+				"id": "09",
+				"imageUrl": "../assets/images/upload/image-product.png",
+				"productCode": "PD003",
+				"productName": "苹果手机C",
+				"statusCode": "01",
+				"createDate": "2016-12-08 11:15:48"
+			},
+			{
+				"id": "08",
+				"imageUrl": "../assets/images/upload/image-product.png",
+				"productCode": "PD004",
+				"productName": "苹果手机D",
+				"statusCode": "01",
+				"createDate": "2016-12-08 15:10:47"
+			},
+			{
+				"id": "07",
+				"imageUrl": "../assets/images/upload/image-product.png",
+				"productCode": "PD005",
+				"productName": "苹果手机E",
+				"statusCode": "01",
+				"createDate": "2016-12-08 11:15:48"
+			},
+			{
+				"id": "06",
+				"imageUrl": "../assets/images/upload/image-product.png",
+				"productCode": "PD006",
+				"productName": "苹果手机F",
+				"statusCode": "01",
+				"createDate": "2016-12-08 15:10:47"
+			},
+			{
+				"id": "05",
+				"imageUrl": "../assets/images/upload/image-product.png",
+				"productCode": "PD007",
+				"productName": "苹果手机G",
+				"statusCode": "01",
+				"createDate": "2016-12-08 11:15:48"
+			},
+			{
+				"id": "04",
+				"imageUrl": "../assets/images/upload/image-product.png",
+				"productCode": "PD008",
+				"productName": "苹果手机H",
+				"statusCode": "01",
+				"createDate": "2016-12-08 15:10:47"
+			},
+			{
+				"id": "03",
+				"imageUrl": "../assets/images/upload/image-product.png",
+				"productCode": "PD009",
+				"productName": "苹果手机I",
+				"statusCode": "01",
+				"createDate": "2016-12-08 11:15:48"
+			},
+			{
+				"id": "02",
+				"imageUrl": "../assets/images/upload/image-product.png",
+				"productCode": "PD010",
+				"productName": "苹果手机J",
+				"statusCode": "01",
+				"createDate": "2016-12-08 15:10:47"
+			}
+		]
+	}
+}

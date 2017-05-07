@@ -1,68 +1,30 @@
 ﻿<div class="main integral-order">
 	<!-- 页签 -->
 	<div class="status">
-		<span class="status-tab selected">全部记录</span>
-		<span class="status-tab">已发货</span>
-		<span class="status-tab">已收货</span>
-		<span class="status-tab">未收货</span>
+		<span class="status-tab" ng-class="action=='00'?'selected':''" ng-click="changeType('00');">全部记录</span>
+		<span class="status-tab" ng-class="action=='02,03,04'?'selected':''" ng-click="changeType('02,03,04');">待收货</span>
+		<span class="status-tab" ng-class="action=='05'?'selected':''" ng-click="changeType('05');">已收货</span>
+		<span class="status-tab" ng-class="action=='01,06'?'selected':''" ng-click="changeType('01,06');">未支付</span>
 	</div>
 	<!-- 订单列表 -->
-	<div class="order">
-		<div class="order-item">
-			<div class="order-code">订单号：{{'SZ20170422052210'}}</div>
+	<div class="order dropload-list">
+		<div class="order-item" ng-repeat="item in renderData">
+			<div class="order-code">订单号：{{item.orderCode}}</div>
 			<div class="image-name-code-count">
-				<img src="../images//upload/image-product.png"/>
-				<span class="count">X{{'2'}}</span>
+				<img ng-src="{{item.imageUrl}}"/>
+				<span class="count">X{{item.productAmount}}</span>
 				<div class="name-code">
-					<span class="name">{{'贝德玛（Bioderma）舒妍洁肤液500ml卸妆水'}}</span>
-					<span class="code">编号：{{'SZ20172201110'}}</span>
+					<span class="name">{{item.productName}}</span>
+					<span class="code">编号：{{item.productCode}}</span>
 				</div>
 			</div>
 			<div class="total">
-				共{{'2'}}件商品，合计：{{'27500'}}积分
+				共{{item.productAmount}}件商品，合计：{{item.scoreValue}}积分
 			</div>
 			<div class="status-viewlogistics-confirmreceive">
-				<span class="order-status">待收货</span>
-				<button class="btn confirmreceive">确认收货</button>
-				<button class="btn viewlogistics">查看物流</button>
-			</div>
-		</div>
-		<div class="order-item">
-			<div class="order-code">订单号：{{'SZ20170422052210'}}</div>
-			<div class="image-name-code-count">
-				<img src="../images//upload/image-product.png"/>
-				<span class="count">X{{'2'}}</span>
-				<div class="name-code">
-					<span class="name">{{'贝德玛（Bioderma）舒妍洁肤液500ml卸妆水'}}</span>
-					<span class="code">编号：{{'SZ20172201110'}}</span>
-				</div>
-			</div>
-			<div class="total">
-				共{{'2'}}件商品，合计：{{'27500'}}积分
-			</div>
-			<div class="status-viewlogistics-confirmreceive">
-				<span class="order-status complete">已收货</span>
-				<button class="btn confirmreceive">确认收货</button>
-				<button class="btn viewlogistics">查看物流</button>
-			</div>
-		</div>
-		<div class="order-item">
-			<div class="order-code">订单号：{{'SZ20170422052210'}}</div>
-			<div class="image-name-code-count">
-				<img src="../images//upload/image-product.png"/>
-				<span class="count">X{{'2'}}</span>
-				<div class="name-code">
-					<span class="name">{{'贝德玛（Bioderma）舒妍洁肤液500ml卸妆水'}}</span>
-					<span class="code">编号：{{'SZ20172201110'}}</span>
-				</div>
-			</div>
-			<div class="total">
-				共{{'2'}}件商品，合计：{{'27500'}}积分
-			</div>
-			<div class="status-viewlogistics-confirmreceive">
-				<span class="order-status">已收货</span>
-				<button class="btn confirmreceive">确认收货</button>
-				<button class="btn viewlogistics">查看物流</button>
+				<span class="order-status" ng-class="item.statusCode=='05'?'complete':''">{{item.statusDesc}}</span>
+				<button class="btn confirmreceive" ng-if="item.statusCode=='04'" ng-click="confirmReceipt(item);">确认收货</button>
+				<button class="btn viewlogistics" ng-click="toOrderDetailPath(item);">订单详情</button>
 			</div>
 		</div>
 	</div>

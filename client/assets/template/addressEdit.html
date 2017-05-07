@@ -2,32 +2,59 @@
 	<!-- 表单 -->
 	<ul class="form">
 		<li class="form-item">
-			<label>收件人：</label>
+			<label>收货人：</label>
 			<span class="text">
-				<input type="text" autocomplete="off" placeholder="请输入收件人姓名"/>
+				<input type="text" autocomplete="off" placeholder="请输入收货人姓名" maxlength="8" 
+				ng-model="form.addressDetail.receiverName" ng-keyup="checkReceiverName();" ng-blur="checkReceiverName();"/>
 			</span>
+			<div class="error" ng-if="!isErrorCheckReceiverName||isErrorCallbackReceiverName;">{{errorMessageReceiverName}}</div>
 		</li>
 		<li class="form-item">
 			<label>联系方式：</label>
 			<span class="text">
-				<input type="tel" autocomplete="off" placeholder="请输入收件人手机号"/>
+				<input type="tel" autocomplete="off" placeholder="请输入收货人手机号" maxlength="11" 
+				ng-model="form.addressDetail.mobile" ng-keyup="checkMobile();" ng-blur="checkMobile();"/>
 			</span>
+			<div class="error" ng-if="!isErrorCheckMobile||isErrorCallbackMobile;">{{errorMessageMobile}}</div>
 		</li>
 		<li class="form-item">
 			<label>所在地区：</label>
 			<span class="text">
-				<input type="text" autocomplete="off" placeholder="请选择"/>
+                <span class="address-area" ng-if="!isNoAddress">
+                	{{form.addressDetail.provinceName + form.addressDetail.cityName + form.addressDetail.countyName}}
+                </span>
+                <input type="text" autocomplete="off" placeholder="请选择" class="area" ng-if="isNoAddress">
 			</span>
+			<div class="error" ng-if="!isErrorCheckArea||isErrorCallbackArea;">{{errorMessageArea}}</div>
+	        <div style="display: none;">
+	        	<ul id="addressData">
+	        		<li ng-repeat="item in chinaData">
+	        			{{item.name}}
+	        			<ul>
+	        				<li ng-repeat="subItem in item.cities">
+	        					{{subItem.name}}
+	        					<ul>
+	        						<li ng-repeat="littleItem in subItem.districts">
+	        							{{littleItem.name}}
+	        						</li>
+	        					</ul>
+	        				</li>
+	        			</ul>
+	        		</li>
+	        	</ul>
+	        </div>
 		</li>
 		<li class="form-item">
 			<label>详细地址：</label>
 			<span class="text">
-				<input type="text" autocomplete="off" placeholder="请输入街道、楼牌号等"/>
+				<input type="text" autocomplete="off" placeholder="请输入街道、楼牌号等" maxlength="120" 
+				ng-model="form.addressDetail.detail" ng-keyup="checkDetail();" ng-blur="checkDetail();"/>
 			</span>
+			<div class="error" ng-if="!isErrorCheckDetail||isErrorCallbackDetail;">{{errorMessageDetail}}</div>
 		</li>
 	</ul>
 	<!-- 保存按钮 -->
 	<div class="btn-area">
-		<button class="btn">保存</button>
+		<button class="btn" ng-click="saveAddress();">保存</button>
 	</div>
 </div>

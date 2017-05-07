@@ -1,10 +1,30 @@
 ﻿const angular = require('angular');
+window.Base64 = require('js-base64').Base64;
 require('angular-route');
 require('angular-resource');
 
+require('./assets/lib/dropload.js');
 require('./assets/lib/common.js');
 require('./assets/css/font.css');
 require('./assets/css/main.scss');
+
+require('./assets/lib/mobiscroll/css/mobiscroll.frame.css');
+require('./assets/lib/mobiscroll/css/mobiscroll.frame.ios.css');
+require('./assets/lib/mobiscroll/css/mobiscroll.scroller.css');
+require('./assets/lib/mobiscroll/css/mobiscroll.scroller.android.css');
+require('./assets/lib/mobiscroll/css/mobiscroll.scroller.ios.css');
+require('./assets/lib/mobiscroll/css/mobiscroll.frame.css');
+require('./assets/lib/mobiscroll/mobiscroll.core.js');
+require('./assets/lib/mobiscroll/mobiscroll.frame.js');
+require('./assets/lib/mobiscroll/mobiscroll.scroller.js');
+require('./assets/lib/mobiscroll/mobiscroll.util.datetime.js');
+require('./assets/lib/mobiscroll/mobiscroll.datetimebase.js');
+require('./assets/lib/mobiscroll/mobiscroll.datetime.js');
+require('./assets/lib/mobiscroll/mobiscroll.select.js');
+require('./assets/lib/mobiscroll/mobiscroll.listbase.js');
+require('./assets/lib/mobiscroll/mobiscroll.treelist.js');
+require('./assets/lib/mobiscroll/mobiscroll.frame.ios.js');
+require('./assets/lib/mobiscroll/i18n/mobiscroll.i18n.zh.js');
 
 //图片url通过require方式加载
 window.getImage = function(imageUrl){
@@ -29,7 +49,7 @@ window.getImage = function(imageUrl){
 	};
 };
 
-const app = angular.module('indexApp',['ngRoute','ngResource']);
+const app = angular.module('indexApp',[require('angular-sanitize'),'ngRoute','ngResource']);
 app.config(['$routeProvider',function($routeProvider){
 	$routeProvider.
 	//积分商城
@@ -63,7 +83,7 @@ app.config(['$routeProvider',function($routeProvider){
 		controller: require('./assets/controller/exchangeCenter.js')
 	}).
 	//兑换详情
-	when('/exchangeDetail',{
+	when('/exchangeDetail/:productCode',{
 		template: require('./assets/template/exchangeDetail.html'),
 		controller: require('./assets/controller/exchangeDetail.js')
 	}).
@@ -88,12 +108,12 @@ app.config(['$routeProvider',function($routeProvider){
 		controller: require('./assets/controller/addressManagement.js')
 	}).
 	//地址编辑
-	when('/addressEdit',{
+	when('/addressEdit/:addressId',{
 		template: require('./assets/template/addressEdit.html'),
 		controller: require('./assets/controller/addressEdit.js')
 	}).
 	//地址添加
-	when('/addressEdit',{
+	when('/addressAdd',{
 		template: require('./assets/template/addressEdit.html'),
 		controller: require('./assets/controller/addressEdit.js')
 	}).
@@ -113,12 +133,12 @@ app.config(['$routeProvider',function($routeProvider){
 		controller: require('./assets/controller/integralOrder.js')
 	}).
 	//订单详情
-	when('/orderDetail',{
+	when('/orderDetail/:orderCode',{
 		template: require('./assets/template/orderDetail.html'),
 		controller: require('./assets/controller/orderDetail.js')
 	}).
 	//物流信息
-	when('/logistics',{
+	when('/logistics/:orderCode',{
 		template: require('./assets/template/logistics.html'),
 		controller: require('./assets/controller/logistics.js')
 	}).
@@ -128,7 +148,7 @@ app.config(['$routeProvider',function($routeProvider){
 		controller: require('./assets/controller/integralDraw.js')
 	}).
 	//抽奖详情
-	when('/integralDrawDetail',{
+	when('/integralDrawDetail/:productCode',{
 		template: require('./assets/template/integralDrawDetail.html'),
 		controller: require('./assets/controller/integralDrawDetail.js')
 	}).
@@ -168,25 +188,30 @@ app.run([
 	        $rootScope.form.topBar = {
 	        	'showTopBar': true,
 				'topBarTitle': '',
-				'showLeftBtn': false,
-				'leftBtnType': '',
+				'showLeftBtn': true,
+				'leftBtnType': 'icon icon-keyboard_arrow_left',
 				'leftBtnTitle': '',
-				'showRightBtn': false,
-				'rightBtnType': '',
+				'showRightBtn': true,
+				'rightBtnType': 'icon icon-trash',
 				'rightBtnTitle': ''
             };
 	        $rootScope.form.leftBtnClick = function(){
-		    	window.location.history=window.history.back();
+		    	window.location.href=window.history.back();
+		    };
+	        $rootScope.form.rightBtnClick = function(){
+		    	window.location.href=origin+'/mb-service/index.xhtml';
 		    };
 	    });
 	    //toast提示弹窗
-		$rootScope.showToast = function(msg, callback, timeout){
+		$rootScope.showToast = function(message, callback, timeout){
 			var callback = callback || function(){};
-			if(msg && msg.length){
+			if(message && message.length){
 				var timeout = timeout || 2000;
-				var htmlTemp = '<div class="popup_msg" id="toastPopup">' +
-							       '<div class="popup_main" style="height:18%;">' +
-							           '<div class="msg" style="word-wrap: break-word;">' + msg + '</div>' +
+				var htmlTemp = '<div class="modal" id="toastPopup">' +
+							       '<div class="modal-dialog">' +
+							           '<div class="modal-content">' +
+							               '<div class="modal-body text-center" style="word-wrap: break-word;">' + message + '</div>' +
+							           '</div>' +
 							       '</div>' +
 							   '</div>';
 				$(htmlTemp).appendTo('body').fadeIn('fast',function(){
@@ -198,15 +223,15 @@ app.run([
 			};
 		};
 	    //警告弹窗
-		$rootScope.showAlert = function(msg, successFn){
-			var footerTemplate = '<div class="line"></div>' +
-					 '<div class="center_btn blue" ng-click="$modelSuccess();">{{$modelSuccessLabel}}</div>';
+		$rootScope.showAlert = function(message, successFn){
+			var footerTemplate = '<div class="btn" ng-click="$modelSuccess();">{{$modelSuccessLabel}}</div>';
 			createDialog({
 				id: 'alertPopup',
-				title: '',
-				template: '<div class="text-center">' + msg + '</div>',
+				template: '<div class="text-center">' + message + '</div>',
 				controller: null,
+				headerShow: false,
 				footerTemplate: footerTemplate,
+				footerShow: true,
 				success: {
 					label: '确定',
 					fn: function(){
@@ -216,12 +241,13 @@ app.run([
 			});
 		};
 	    //确认弹窗
-		$rootScope.showConfirm = function(msg, successFn, cancelFn, successLabel, cancelLabel){
+		$rootScope.showConfirm = function(message, successFn, cancelFn, successLabel, cancelLabel){
 			createDialog({
 				id: 'confirmPopup',
-				title: '',
-				template: '<div class="text-center">' + msg + '</div>',
+				template: '<div class="text-center">' + message + '</div>',
 				controller: null,
+				headerShow: false,
+				footerShow: true,
 				success: {
 					label: successLabel||'确定',
 					fn: function(){
@@ -242,7 +268,7 @@ app.run([
 app.factory('form',['$location',function($location){
 	return {
 	    topBar: {
-	    	'showTopBar': true,
+	    	'showTopBar': false,
 	        'topBarTitle': '',
 	        'showLeftBtn': false,
 	        'leftBtnType': '',
@@ -257,9 +283,10 @@ app.factory('form',['$location',function($location){
 	    	message: '加载中...'
 	    },
 	    leftBtnClick: function(){
-	    	window.location.history=window.history.back();
+	    	window.location.href=window.history.back();
 	    },
 	    rightBtnClick: function(){
+	    	window.location.href=origin+'/mb-service/index.xhtml';
 	    },
 	    goPath: function(path){
 			$location.path(path);
@@ -269,16 +296,16 @@ app.factory('form',['$location',function($location){
 //http请求
 app.factory('baseDataService', ['$rootScope', '$http', '$q', 'form', 'createDialog', function($rootScope, $http, $q, form, createDialog){
 	//调试接口写入cookie
-	//setCookie('UID','1071913');
+	setCookie('UID','1071913');
 	var service = {};
 	service.originalHttp = function(url, param, config){
-		var url = url ? apiPath+url : '';
+		var url = url ? (isStaticInterface?staticPath+url+'.json':apiPath+url) : '';
 		var param = param ? {
 			param: Base64.encode(JSON.stringify(param))
 		} : null;
 		var config = config && typeof config == 'object' ? config : {};
 		var isDisabledRepeatedly = config.isDisabledRepeatedly || false;
-		var method = config.method || 'post';
+		var method = config.method || (isStaticInterface?'get':'post');
 		var timeout = config.timeout || 60000;
 		var dataType = config.dataType || 'json';
 		var async = config.async==undefined ? true : config.async;
@@ -315,7 +342,7 @@ app.factory('baseDataService', ['$rootScope', '$http', '$q', 'form', 'createDial
 							success: {
 								label: '登录',
 								fn: function(){
-									window.location.href = 'http://member-sit.test-cignacmb.com/pc-member/login.xhtml?callback='+path;
+									window.location.href = origin+'/mb-member/login.xhtml?callback='+path;
 								}
 							},
 							cancel: {
@@ -369,6 +396,7 @@ app.factory('createDialog',['$compile','$rootScope','$controller','$timeout',fun
 		success: {label: 'Ok',fn: null},
 		cancel: {label: 'Cancel',fn: null},
 		controller: null,
+		headerShow: true,
 		footerTemplate: null,
 		footerShow: false,
 		modelClass: 'modal',
@@ -401,16 +429,18 @@ app.factory('createDialog',['$compile','$rootScope','$controller','$timeout',fun
 			else return '<div class="modal-body" ng-include="\'' + options.templateUrl + '\'"></div>';
 		})();
 		var idHtml = options.id ? 'id="' + options.id + '"' : '';
-		var defaultFooter = '<button type="button" class="btn" ng-click="$modelCancel();">{{$modelCancelLabel}}</button>' +
-							'<button type="button" class="btn btn-primary" ng-click="$modelSuccess();">{{$modelSuccessLabel}}</button>';
+		var headerHtml = options.headerShow ? 
+						'<div class="modal-header">' +
+							'<a class="close" ng-click="$modelCancel();"></a>' +
+							'<h2>{{$title}}</h2>' +
+						'</div>' : '';
+		var defaultFooter = '<button type="button" class="btn cancel" ng-click="$modelCancel();">{{$modelCancelLabel}}</button>' +
+							'<button type="button" class="btn success btn-primary" ng-click="$modelSuccess();">{{$modelSuccessLabel}}</button>';
 		var footerTemplate = options.footerShow ? '<div class="modal-footer">' + (options.footerTemplate || defaultFooter) + '</div>' : '';
 		var modelTemplate = '<div class="' + options.modelClass + '" ' + idHtml + ' style="display: table;">' +
 								'<div class="modal-dialog">' +
 									'<div class="modal-content">' +
-										'<div class="modal-header">' +
-											'<a class="close" ng-click="$modelCancel();"></a>' +
-											'<h2>{{$title}}</h2>' +
-										'</div>' +
+										headerHtml +
 										bodyHtml +
 										footerTemplate +
 									'</div>' +

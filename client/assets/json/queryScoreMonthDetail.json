@@ -1,6 +1,26 @@
-﻿﻿{
+﻿{
     "respCode": "00", 
     "respDesc": "请求成功", 
-    "respData": {
-    }
+    "respData": [
+		{
+			"recordDate": "02-28",
+			"operateRemark": "抽奖活动",
+			"scoreValue": "-199"
+		},
+		{
+			"recordDate": "02-25",
+			"operateRemark": "每日签到",
+			"scoreValue": "+50"
+		},
+		{
+			"recordDate": "02-21",
+			"operateRemark": "抽奖活动",
+			"scoreValue": "-199"
+		},
+		{
+			"recordDate": "02-20",
+			"operateRemark": "抽奖活动",
+			"scoreValue": "-199"
+		}
+	]
 }

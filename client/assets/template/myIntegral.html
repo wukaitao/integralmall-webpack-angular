@@ -6,31 +6,21 @@
 			总积分：
 		</div>
 		<div class="total-content">
-			{{'50,000'}}
+			{{renderData.totalScore | formatCount}}
 		</div>
 		<div class="total-tab">
-			<span>积分明细</span>
-			<span>积分规则</span>
+			<span ng-click="form.goPath('integralDetail');">积分明细</span>
+			<span ng-click="form.goPath('integralRule');">积分规则</span>
 		</div>
 	</div>
 	<!-- 猜你喜欢 -->
-	<div class="more">
+	<div class="more" ng-if="renderData.bannerListA005.length">
 		<div class="more-title">猜你喜欢</div>
 		<div class="more-content">
-			<div class="item to-more">
-				<img src="../images/upload/image-banner-more-exchangeCenter.png"/>
-				<span class="name">积分抽奖</span>
-				<span class="desc">99积分兑换好礼</span>
-			</div>
-			<div class="item to-more">
-				<img src="../images/upload/image-banner-more-integralDraw.png"/>
-				<span class="name">积分兑换</span>
-				<span class="desc">花积分兑换好礼</span>
-			</div>
-			<div class="item to-more">
-				<img src="../images/upload/image-banner-more-sign.png"/>
-				<span class="name">每日签到</span>
-				<span class="desc">签到赢积分</span>
+			<div class="item to-more" ng-repeat="item in renderData.bannerListA005 | orderBy:['sortNo']" ng-click="goBannerPath(item);">
+				<img ng-src="{{item.imageUrl}}"/>
+				<span class="name">{{item.advertName.split('-')[0]}}</span>
+				<span class="desc">{{item.advertName.split('-')[1]}}</span>
 			</div>
 		</div>
 	</div>

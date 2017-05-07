@@ -1,6 +1,36 @@
-﻿﻿{
-    "respCode": "00", 
+﻿{
+	"respCode": "00", 
     "respDesc": "请求成功", 
-    "respData": {
-    }
+    "respData": [
+		{
+			"addressId": "12",
+			"receiverName": "张三",
+			"mobile": "13640121100",
+			"provinceCode": "440000",
+			"cityCode": "440300",
+			"countyCode": "440305",
+			"detail": "康佳研发大厦-明玉路25号 11F",
+			"isDefault": "01"
+		},
+		{
+			"addressId": "07",
+			"receiverName": "李四",
+			"mobile": "13510001200",
+			"provinceCode": "370000",
+			"cityCode": "370200",
+			"countyCode": "370214",
+			"detail": "泰和路197号14-01栋",
+			"isDefault": "00"
+		},
+		{
+			"addressId": "05",
+			"receiverName": "王小串",
+			"mobile": "15810000001",
+			"provinceCode": "110000",
+			"cityCode": "110100",
+			"countyCode": "110101",
+			"detail": "康佳研发大厦-明玉路25号 11F",
+			"isDefault": "00"
+		}
+    ]
 }

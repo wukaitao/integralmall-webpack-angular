@@ -1,46 +1,45 @@
 ﻿<div class="main order-detail">
-	<!-- 订单号/状态 -->
-	<div class="order-code-status">
-		<span class="order-code">订单号：{{'20170501182210'}}</span>
-		<span class="status">已发货</span>
-	</div>
-	<!-- 物流状态 -->
-	<div class="logistics">
-		<i class="icon"></i>
-		<div class="date-desc">
-			<div class="date">{{'2017-04-20 15:26:39'}}</div>
-			<div class="desc">{{'已收件，发往上海航空部运往深圳南山区营业部'}}</div>
+	<!-- 订单/物流 -->
+	<div class="order">
+		<div class="order-code-status">
+			<span class="order-code">订单号：{{renderData.detail.orderCode}}</span>
+			<span class="status" ng-class="renderData.detail.statusCode=='05'?'complete':''">{{renderData.detail.statusDesc}}</span>
+		</div>
+		<div class="logistics" ng-if="renderData.logistics.expressDetail">
+			<i class="icon icon-local_shipping"></i>
+			<div class="date-desc">
+				<div class="date">{{renderData.logistics.expressDetail[0].date}}</div>
+				<div class="desc">{{renderData.logistics.expressDetail[0].desc}}</div>
+			</div>
 		</div>
 	</div>
 	<!-- 收件地址 -->
 	<div class="address">
-		<i class="icon"></i>
+		<i class="icon icon-location-outline"></i>
 		<div class="name-mobile-detail">
 			<div class="name-mobile">
-				<span class="name">{{'Nicky.Wu'}}</span>
-				<span class="mobile">{{'15620000012'}}</span>
+				<span class="name">{{renderData.detail.receiverName}}</span>
+				<span class="mobile">{{renderData.detail.mobileCode}}</span>
 			</div>
-			<div class="detail">{{'广东省深圳市南山区 科技南路22号康佳研发大厦11F'}}</div>
+			<div class="detail">{{renderData.detail.detailAddress}}</div>
 		</div>
 	</div>
 	<!-- 商品 -->
 	<div class="product">
-		<img src="../images//upload/image-product.png"/>
+		<img ng-src="{{renderData.detail.imageUrl}}"/>
 		<div class="name-count-integral">
-			<div class="name">
-				{{'贝德玛（Bioderma）舒妍洁肤液500ml卸妆水（粉水 卸妆 眼唇 舒缓 保湿）'}}
-			</div>
+			<div class="name">{{renderData.detail.productName}}</div>
 			<div class="count-integral">
-				<span class="count">数量：{{'2'}}件</span>
-				<span class="integral">消费：{{'40500'}}积分</span>
+				<span class="count">数量：{{renderData.detail.productAmount}}件</span>
+				<span class="integral">消费：{{renderData.detail.scoreValue}}积分</span>
 			</div>
 		</div>
-		<div class="total">合计：{{'79990'}}积分</div>
-		<div class="time">下单时间：{{'2017-04-20 10:25:16'}}</div>
+		<div class="total">合计：{{renderData.detail.scoreValue}}积分</div>
+		<div class="time">下单时间：{{renderData.detail.orderDate | date:'yyyy-MM-dd HH:mm:ss'}}</div>
 	</div>
 	<!-- 底部工具栏 -->
 	<div class="operation">
-		<span class="operation-tab">查看物流</span>
-		<span class="operation-tab">取消订单</span>
+		<span class="operation-tab" ng-if="renderData.detail.statusCode=='04'||renderData.detail.statusCode=='05'" ng-click="toLogisticsPath(renderData.detail.orderCode);">查看物流</span>
+		<span class="operation-tab cancel" ng-if="renderData.detail.isCancel=='01'" ng-click="cancelOrder(renderData.detail.orderCode);">取消订单</span>
 	</div>
 </div>

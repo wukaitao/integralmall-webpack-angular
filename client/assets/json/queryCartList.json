@@ -1,6 +1,39 @@
-﻿﻿{
+﻿{
     "respCode": "00", 
     "respDesc": "请求成功", 
-    "respData": {
-    }
+    "respData": [
+		{
+			"productCode": "PD001",
+			"productName": "苹果手机A",
+			"defaultScore": "3600 ",
+			"activityScore": "2500",
+			"activityType": "00",
+			"imageUrl": "../assets/images/upload/image-product.png",
+			"amount": "2",
+			"createDate": "2017-04-12 12:24:38",
+			"statusCode": "00"
+		},
+		{
+			"productCode": "PD002",
+			"productName": "苹果手机B",
+			"defaultScore": "40500 ",
+			"activityScore": "40200",
+			"activityType": "00",
+			"imageUrl": "../assets/images/upload/image-product.png",
+			"amount": "1",
+			"createDate": "2017-04-11 20:05:07",
+			"statusCode": "03"
+		},
+		{
+			"productCode": "PD003",
+			"productName": "苹果手机C",
+			"defaultScore": "14500",
+			"activityScore": "12000",
+			"activityType": "02",
+			"imageUrl": "../assets/images/upload/image-product.png",
+			"amount": "2",
+			"createDate": "2017-03-10 08:24:41",
+			"statusCode": "03"
+		}
+	]
 }

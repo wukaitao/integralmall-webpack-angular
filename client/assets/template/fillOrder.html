@@ -1,86 +1,74 @@
 ﻿<div class="main fill-Order">
 	<!-- 默认地址 -->
-	<div class="address">
+	<div class="address" ng-click="toAddressManagerPath();" ng-if="renderData.addressInfo">
 		<div class="name-mobile">
-			<span class="name">{{'伍老板'}}</span>
-			<span class="mobile">{{'13512001200'}}</span>
+			<span class="name">{{renderData.addressInfo.receiverName}}</span>
+			<span class="mobile">{{renderData.addressInfo.mobile}}</span>
 			<span class="tag">默认地址</span>
 		</div>
-		<div class="detail">{{'广东省深圳市南山区科技南路28号康佳研发大厦11-22'}}</div>
+		<div class="detail">
+			{{renderData.addressInfo.provinceName+renderData.addressInfo.cityName+renderData.addressInfo.countyName}}
+			{{renderData.addressInfo.detail}}
+		</div>
 	</div>
+	<div class="no-address" ng-click="toAddressManagerPath();" ng-if="!renderData.addressInfo">请填写收货地址</div>
 	<!-- 商品 -->
 	<div class="product">
-		<div class="product-item">
+		<div class="product-item" ng-repeat="item in renderData.selectedList">
 			<div class="product-title">
-				编号：{{'SZ2155420170512'}}{{'(特惠)'}}
+				编号：{{item.productCode+(item.activityType=='02'?'(特惠)':item.activityType=='03'?'(推荐)':'')}}
 			</div>
 			<div class="product-content">
-				<img src="../images//upload/image-product.png"/>
+				<img ng-src="{{item.imageUrl}}"/>
 				<div class="name-integral-counter">
-					<div class="name">
-						{{'贝德玛（Bioderma）舒妍洁肤液500ml卸妆水（粉水 卸妆 眼唇 舒缓 保湿）'}}
-					</div>
-					<div class="integral-counter">
+					<div class="name">{{item.productName}}</div>
+					<div class="integral-counter" ng-if="renderData.fromType!='lottery'">
 						<span class="integral">
-							<strong>{{'40500'}}</strong>积分
+							<strong>{{item.activityType=='01'||item.activityType=='02'?item.activityScore:item.defaultScore}}</strong>积分
 						</span>
 						<span class="counter">
-							<span class="delete">-</span>
-							<span>{{'1'}}</span>
-							<span class="add">+</span>
+							<span class="delete" ng-click="delCount(item);" ng-class="item.amount==1?'disabled':''">-</span>
+							<span>{{item.amount}}</span>
+							<span class="add" ng-click="addCount(item);">+</span>
 						</span>
 					</div>
 				</div>
 			</div>
-			<div class="product-total">
-				合计：{{'40500'}}积分
-			</div>
-		</div>
-		<div class="product-item">
-			<div class="product-title">
-				编号：{{'SZ2155420170512'}}
-			</div>
-			<div class="product-content">
-				<img src="../images//upload/image-product.png"/>
-				<div class="name-integral-counter">
-					<div class="name">
-						{{'贝德玛（Bioderma）舒妍洁肤液500ml卸妆水（粉水 卸妆 眼唇 舒缓 保湿）'}}
-					</div>
-					<div class="integral-counter">
-						<span class="integral">{{'40500'}}积分</span>
-						<span class="counter">
-							<span class="delete">-</span>
-							<span>{{'1'}}</span>
-							<span class="add">+</span>
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="product-total">
-				合计：{{'40500'}}积分
+			<div class="product-total" ng-if="renderData.fromType!='lottery'">
+				合计：{{(item.activityType=='01'||item.activityType=='02'?item.activityScore:item.defaultScore)*item.amount}}积分
 			</div>
 		</div>
 	</div>
+	<!-- 底部工具栏 -->
+	<div class="operation">
+		<span class="operation-tab showpay" ng-click="showPayDetailFn();">{{renderData.fromType!='lottery'?'立即兑换':'立即领取'}}</span>
+	</div>
 	<!-- 付款详情 -->
-	<div class="pay" ng-if="false">
-		<div class="pay-title">付款详情</div>
-		<div class="pay-item">
-			<label>订单信息：</label><span>{{'贝德玛（Bioderma）舒妍洁肤液'}}</span>
-		</div>
-		<div class="pay-item">
-			<label>付款方式：</label><span>完美人生积分</span>
-		</div>
-		<div class="pay-item">
-			<label>付款金额：</label><span>{{'40500'}}积分</span>
-		</div>
-		<div class="pay-item">
-			<label>验证码：</label>
-			<input type="text" autocomplete="off" placeholder="请输入右侧数字验证码"/>
-			<img/>
-		</div>
-		<div class="error forVerificationCode">请输入正确验证码</div>
-		<div class="btn-area">
-			<button class="btn">确定付款</button>
-		</div>
+	<div class="pay" ng-show="showPayDetail">
+		<div class="pay-cover" ng-click="hidePayDetail();"></div>
+    	<div class="pay-container">
+			<div class="pay-title">付款详情</div>
+			<div class="pay-item">
+				<label>订单信息：</label><span>{{orderInfo}}</span>
+			</div>
+			<div class="pay-item">
+				<label>付款方式：</label><span>完美人生积分</span>
+			</div>
+			<div class="pay-item">
+				<label>付款金额：</label><span>{{totalScore}}积分</span>
+			</div>
+			<div class="pay-item">
+				<label>验证码：</label>
+				<input type="text" autocomplete="off" placeholder="请输入右侧数字验证码" maxlength="4" 
+				ng-model="verificationCode" ng-keyup="checkVerificationCode();" ng-blur="checkVerificationCode();"/>
+				<img ng-src="{{verificationCodeImage}}" ng-click="getVerificationCodeImage();"/>
+			</div>
+			<div class="error forVerificationCode" ng-if="!checkVerificationCode()||isErrorCallbackReceiverName">{{errorMessageVerificationCode}}</div>
+			<div class="btn-area">
+				<button class="btn" ng-class="form.isRequesting?'disabled':''" ng-click="pay();">
+					{{renderData.fromType!='lottery'?'确定付款':'确定领取'}}
+				</button>
+			</div>
+    	</div>
 	</div>
 </div>

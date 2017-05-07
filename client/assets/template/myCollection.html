@@ -1,39 +1,38 @@
 ﻿<div class="main my-collection">
 	<!-- 操作  -->
-	<div class="top">
-		<span class="status">
+	<div class="top" ng-if="myCollectionType=='default'">
+		<span class="status" ng-click="changePageStatus('edit');">
 			<i class="icon icon-mode_edit"></i>编辑
 		</span>
 	</div>
-	<div class="top" ng-if="false">
-		<span class="choose">
-			<i class="icon icon-circle-check"></i>全选
+	<div class="top" ng-if="myCollectionType=='edit'">
+		<span class="choose" ng-click="changeChosenAll();">
+			<i class="icon" ng-class="isChosenAll?'icon-check_circle':'icon-circle-check'"></i>全选
 		</span>
-		<span class="status">
+		<span class="status" ng-click="changePageStatus('default');">
 			<i class="icon icon-exit_to_app"></i>完成
 		</span>
 	</div>
 	<!-- 收藏夹列表 -->
 	<div class="product">
-		<div class="product-item">
-			<div class="product-left">
-				<i class="icon icon-circle-check"></i>
+		<div class="product-item" ng-repeat="item in renderData">
+			<div class="product-left" ng-if="myCollectionType=='edit'">
+				<i class="icon" ng-class="item.isChosen?'icon-check_circle':'icon-circle-check'" ng-click="changeChosen(item);"></i>
 			</div>
-			<div class="product-right">
-				<div class="product-title">编号：{{'SZ20170422142535'}}{{'特惠'}}</div>
+			<div class="product-right" ng-class="myCollectionType=='edit'?'':'notEdit'" ng-click="toDetailPath(item);">
+				<div class="product-title">编号：{{item.productCode+(item.activityType=='02'?'(特惠)':item.activityType=='03'?'(推荐)':'')}}</div>
 				<div class="product-content">
 					<img src="../images//upload/image-product.png"/>
 					<div class="name-integral">
-						<div class="name">
-							{{'贝德玛（Bioderma）舒妍洁肤液500ml卸妆水（粉水 卸妆 眼唇 舒缓 保湿）'}}
-						</div>
+						<div class="name">{{item.productName}}</div>
 						<div class="integral">
-							<span class="integral">{{'40500'}}积分</span>
+							<span class="integral">{{item.activityType=='01'||item.activityType=='02'?item.activityScore:item.defaultScore}} 积分</span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<!--
 		<div class="product-item">
 			<div class="product-left">
 				<i class="icon icon-circle-check"></i>
@@ -53,15 +52,16 @@
 				</div>
 			</div>
 		</div>
+		-->
 	</div>
 	<!-- 底部工具栏 -->
-	<div class="operation">
+	<div class="operation" ng-if="myCollectionType=='edit'">
 		<span class="operation-tab">
-			已选中：<strong>{{'2'}}</strong>项
+			已选中：<strong>{{selectedCount}}</strong>项
 		</span>
-		<span class="operation-tab delete">
+		<span class="operation-tab delete" ng-click="deleteProduct();">
 			<i class="icon icon-local_shipping"></i>删除
 		</span>
-		<span class="operation-tab complete">完成</span>
+		<span class="operation-tab complete" ng-click="changePageStatus('default');">完成</span>
 	</div>
 </div>

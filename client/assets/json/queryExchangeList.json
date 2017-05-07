@@ -1,0 +1,96 @@
+﻿{
+    "respCode": "00", 
+    "respDesc": "请求成功", 
+    "respData": [
+        {
+            "productCode": "PD001",
+            "productName": "苹果手机A",
+            "imageUrl": "../assets/images/upload/image-product.png",
+            "defaultScore": "40000",
+			"activityScore": "38000",
+            "activityType": "00",
+			"statusCode": "03"
+        },
+        {
+            "productCode": "PD002",
+            "productName": "苹果手机B",
+            "imageUrl": "../assets/images/upload/image-product.png",
+            "defaultScore": "40010",
+			"activityScore": "38000",
+            "activityType": "02",
+			"statusCode": "03"
+        },
+        {
+            "productCode": "PD003",
+            "productName": "苹果手机C",
+            "imageUrl": "../assets/images/upload/image-product.png",
+            "defaultScore": "40000",
+			"activityScore": "38000",
+            "activityType": "02",
+			"statusCode": "03"
+        },
+        {
+            "productCode": "PD004",
+            "productName": "苹果手机D",
+            "imageUrl": "../assets/images/upload/image-product.png",
+            "defaultScore": "40010",
+			"activityScore": "38000",
+            "activityType": "03",
+			"statusCode": "03"
+        },
+        {
+            "productCode": "PD005",
+            "productName": "苹果手机E",
+            "imageUrl": "../assets/images/upload/image-product.png",
+            "defaultScore": "40000",
+			"activityScore": "38000",
+            "activityType": "00",
+			"statusCode": "01"
+        },
+        {
+            "productCode": "PD006",
+            "productName": "苹果手机F",
+            "imageUrl": "../assets/images/upload/image-product.png",
+            "defaultScore": "40010",
+			"activityScore": "38000",
+            "activityType": "00",
+			"statusCode": "01"
+        },
+        {
+            "productCode": "PD007",
+            "productName": "苹果手机G",
+            "imageUrl": "../assets/images/upload/image-product.png",
+            "defaultScore": "700",
+			"activityScore": "680",
+            "activityType": "02",
+			"statusCode": "03"
+        },
+        {
+            "productCode": "PD008",
+            "productName": "苹果手机H",
+            "imageUrl": "../assets/images/upload/image-product.png",
+            "defaultScore": "800",
+			"activityScore": "780",
+            "activityType": "03",
+			"statusCode": "03"
+        },
+        {
+            "productCode": "PD009",
+            "productName": "苹果手机I",
+            "imageUrl": "../assets/images/upload/image-product.png",
+            "defaultScore": "900",
+			"activityScore": "880",
+            "activityType": "00",
+			"statusCode": "03"
+        },
+        {
+            "productCode": "PD010",
+            "productName": "苹果手机J",
+            "imageUrl": "../assets/images/upload/image-product.png",
+            "defaultScore": "1000",
+			"activityScore": "980",
+            "activityType": "02",
+			"statusCode": "03"
+        }
+	]
+}

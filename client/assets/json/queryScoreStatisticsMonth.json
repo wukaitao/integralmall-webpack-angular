@@ -1,6 +1,28 @@
-﻿﻿{
+﻿{
     "respCode": "00", 
     "respDesc": "请求成功", 
     "respData": {
+		"totalScore": "14587",
+		"expenseScore": "10573",
+		"scoreMonth": [
+			{
+				"month": "2017-02"
+			},
+			{
+				"month": "2017-01"
+			},
+			{
+				"month": "2016-12"
+			},
+			{
+				"month": "2016-11"
+			},
+			{
+				"month": "2016-10"
+			},
+			{
+				"month": "2016-09"
+			}
+		]
     }
 }

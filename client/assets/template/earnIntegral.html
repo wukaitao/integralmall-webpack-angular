@@ -1,29 +1,9 @@
 ﻿<div class="main earn-integral">
 	<ul class="list">
-		<li class="list-item">
-			<img src="../images/design/icon-earnIntegral-register-default.png"/>
-			<span class="desc">{{'500积分'}}</span>
-			<span class="name">{{'注册登录(已完成)'}}</span>
-		</li>
-		<li class="list-item">
-			<img src="../images/design/icon-earnIntegral-binding-default.png"/>
-			<span class="desc">{{'100积分'}}</span>
-			<span class="name">{{'绑定订单(已完成)'}}</span>
-		</li>
-		<li class="list-item">
-			<img src="../images/design/icon-earnIntegral-renewal-default.png"/>
-			<span class="desc">{{'300积分'}}</span>
-			<span class="name">{{'续保订单'}}</span>
-		</li>
-		<li class="list-item">
-			<img src="../images/design/icon-earnIntegral-sign-default.png"/>
-			<span class="desc">{{'累积获奖'}}</span>
-			<span class="name">{{'每日签到'}}</span>
-		</li>
-		<li class="list-item">
-			<img src="../images/design/icon-earnIntegral-luckDraw-default.png"/>
-			<span class="desc">{{'转盘抽大奖'}}</span>
-			<span class="name">{{'续保订单'}}</span>
+		<li class="list-item" ng-repeat="item in renderData" ng-click="clickFn(item);">
+			<img ng-src="{{item.isComplete?item.imageSelectedUrl:item.imageUrl}}" alt="{{item.name}}"/>
+			<span class="desc">{{item.count}}积分</span>
+			<span class="name">{{item.name+(item.isComplete?'(已完成)':'')}}</span>
 		</li>
 	</ul>
 </div>

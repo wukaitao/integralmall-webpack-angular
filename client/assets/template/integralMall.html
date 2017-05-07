@@ -1,64 +1,65 @@
 ﻿<div class="main integral-mall">
 	<!-- 广告幻灯片 -->
-	<div class="banner">
-		<img src="../images/upload/image-banner.png"/>
+	<div class="banner" ng-if="renderData.bannerListA001.length">
+		<img ng-repeat="item in renderData.bannerListA001 | limitTo:1 | orderBy:['sortNo']" ng-src="{{item.imageUrl}}" ng-click="goBannerPath(item);"/>
 	</div>
 	<!-- 积分概览 -->
-	<div class="total to-more">
+	<div class="total to-more" ng-click="form.goPath('myIntegral');">
 		<i class="icon icon-server"></i>
-		积分：<span>{{'50000'}}</span>
+		积分：<span>{{renderData.totalScore}}</span>
 	</div>
 	<!-- 栏目 -->
 	<div class="column">
-		<div class="column-item">
+		<div class="column-item" ng-click="form.goPath('earnIntegral');">
 			<img src="../images/design/icon-earnIntegral.png"/>
 			{{'赚积分'}}
 		</div>
-		<div class="column-item">
+		<div class="column-item" ng-click="form.goPath('exchangeCenter');">
 			<img src="../images/design/icon-exchangeCenter.png"/>
 			{{'兑换中心'}}
 		</div>
-		<div class="column-item">
+		<div class="column-item" ng-click="form.goPath('integralEcard');">
 			<img src="../images/design/icon-integralEcard.png"/>
 			{{'积分E卡'}}
 		</div>
-		<div class="column-item">
+		<div class="column-item" ng-click="form.goPath('integralOrder');">
 			<img src="../images/design/icon-integralOrder.png"/>
 			{{'积分订单'}}
 		</div>
 	</div>
 	<!-- 积分抽奖 -->
-	<dl class="draw">
-		<dt class="draw-title to-more">
+	<dl class="draw" ng-if="renderData.bannerListA002.length">
+		<dt class="draw-title to-more" ng-click="form.goPath('integralDraw');">
 			小积分、抽大奖
 		</dt>
 		<dd class="draw-content">
-			<span><img src="../images/upload/image-banner-integralDraw-one.png"/></span>
-			<span><img src="../images/upload/image-banner-integralDraw-two.png"/></span>
+			<span ng-repeat="item in renderData.bannerListA002 | orderBy:['sortNo']" ng-click="goBannerPath(item);">
+				<img ng-src="{{item.imageUrl}}"/>
+			</span>
 		</dd>
 	</dl>
 	<!-- 热门推荐 -->
-	<dl class="hot">
-		<dt class="hot-title to-more">
+	<dl class="hot" ng-if="renderData.bannerListA003.length">
+		<dt class="hot-title to-more" ng-click="form.goPath('exchangeCenter');">
 			热门推荐
 		</dt>
 		<dd class="hot-content">
-			<span><img src="../images/upload/image-banner-hot-one.png"/></span>
-			<span><img src="../images/upload/image-banner-hot-two.png"/></span>
-			<span><img src="../images/upload/image-banner-hot-one.png"/></span>
-			<span><img src="../images/upload/image-banner-hot-two.png"/></span>
+			<span ng-repeat="item in renderData.bannerListA003 | orderBy:['sortNo']" ng-click="goBannerPath(item);">
+				<img ng-src="{{item.imageUrl}}"/>
+			</span>
 		</dd>
 	</dl>
 	<!-- 积分天天赚 -->
-	<dl class="earn">
-		<dt class="earn-title to-more">
+	<dl class="earn" ng-if="renderData.bannerListA004.length">
+		<dt class="earn-title to-more" ng-click="form.goPath('earnIntegral');">
 			积分天天赚
 		</dt>
 		<dd class="earn-content">
-			<span><img src="../images/upload/image-banner-earnIntegral-one.png"/></span>
-			<span><img src="../images/upload/image-banner-earnIntegral-two.png"/></span>
+			<span ng-repeat="item in renderData.bannerListA004 | orderBy:['sortNo']" ng-click="goBannerPath(item);">
+				<img ng-src="{{item.imageUrl}}"/>
+			</span>
 		</dd>
 	</dl>
 	<!-- 常见问题 -->
-	<div class="problem to-more">常见问题</div>
+	<div class="problem to-more" ng-click="form.goPath('problem');">常见问题</div>
 </div>

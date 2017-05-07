@@ -1,6 +1,78 @@
-﻿﻿{
+﻿{
     "respCode": "00", 
     "respDesc": "请求成功", 
-    "respData": {
-    }
+    "respData": [
+		{
+			"dataValue": "JJSH",
+			"dataText": "家居生活",
+			"imageUrl": "../assets/images/upload/icon-JJSS-default.png",
+			"imageSelectedUrl": "../assets/images/upload/icon-JJSS-selected.png"
+		},
+		{
+			"dataValue": "SMDZ",
+			"dataText": "数码电子",
+			"imageUrl": "../assets/images/upload/icon-SMDZ-default.png",
+			"imageSelectedUrl": "../assets/images/upload/icon-SMDZ-selected.png"
+		},
+		{
+			"dataValue": "WBWJ",
+			"dataText": "文本玩具",
+			"imageUrl": "../assets/images/upload/icon-WBWJ-default.png",
+			"imageSelectedUrl": "../assets/images/upload/icon-WBWJ-selected.png"
+		},
+		{
+			"dataValue": "SPBJ",
+			"dataText": "食品保健",
+			"imageUrl": "../assets/images/upload/icon-SPBJ-default.png",
+			"imageSelectedUrl": "../assets/images/upload/icon-SPBJ-selected.png"
+		},
+		{
+			"dataValue": "MRPS",
+			"dataText": "美容配饰",
+			"imageUrl": "../assets/images/upload/icon-MRPS-default.png",
+			"imageSelectedUrl": "../assets/images/upload/icon-MRPS-selected.png"
+		},
+		{
+			"dataValue": "HWYD",
+			"dataText": "户外运动",
+			"imageUrl": "../assets/images/upload/icon-HWYD-default.png",
+			"imageSelectedUrl": "../assets/images/upload/icon-HWYD-selected.png"
+		},
+		{
+			"dataValue": "QCYP",
+			"dataText": "汽车用品",
+			"imageUrl": "../assets/images/upload/icon-QCYP-default.png",
+			"imageSelectedUrl": "../assets/images/upload/icon-QCYP-selected.png"
+		},
+		{
+			"dataValue": "XNKQ",
+			"dataText": "虚拟卡券",
+			"imageUrl": "../assets/images/upload/icon-XNKQ-default.png",
+			"imageSelectedUrl": "../assets/images/upload/icon-XNKQ-selected.png"
+		},
+		{
+			"dataValue": "SHDQ",
+			"dataText": "生活电器",
+			"imageUrl": "../assets/images/upload/icon-SHDQ-default.png",
+			"imageSelectedUrl": "../assets/images/upload/icon-SHDQ-selected.png"
+		},
+		{
+			"dataValue": "XBPJ",
+			"dataText": "箱包皮具",
+			"imageUrl": "../assets/images/upload/icon-XBPJ-default.png",
+			"imageSelectedUrl": "../assets/images/upload/icon-XBPJ-selected.png"
+		},
+		{
+			"dataValue": "CFYJ",
+			"dataText": "厨房用具",
+			"imageUrl": "../assets/images/upload/icon-CFYJ-default.png",
+			"imageSelectedUrl": "../assets/images/upload/icon-CFYJ-selected.png"
+		},
+		{
+			"dataValue": "GRHL",
+			"dataText": "个人护理",
+			"imageUrl": "../assets/images/upload/icon-GRHL-default.png",
+			"imageSelectedUrl": "../assets/images/upload/icon-GRHL-selected.png"
+		}
+	]
 }

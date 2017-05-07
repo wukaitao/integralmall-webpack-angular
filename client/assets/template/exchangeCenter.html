@@ -2,176 +2,75 @@
 	<!-- 顶部栏 -->
 	<div class="top">
 		<span class="count">
-			<i class="icon icon-server"></i>{{'50000'}}
+			<i class="icon icon-server"></i>{{renderData.totalScore}}
 		</span>
 		<span class="search">
 			<i class="icon icon-search"></i>
-			<input type="text" autocomplete="off" placeholder="搜索"/>
+			<input type="text" autocomplete="off" placeholder="搜索" ng-model="form.searchKey" ng-focus="form.goPath('search');"/>
 		</span>
-		<span class="more">
+		<span class="more" ng-click="showMoreMenu=!showMoreMenu;">
 			<i class="icon icon-view_headline"></i>
 		</span>
 	</div>
 	<!-- 筛选栏 -->
 	<div class="filter">
-		<span class="filter-tab">分类</span>
-		<span class="filter-tab">兑换量</span>
-		<span class="filter-tab">积分</span>
-		<span class="filter-tab">区间</span>
+		<span class="filter-tab" ng-click="showClassificationFn();">
+			{{form.categoryName}}
+			<i class="icon" ng-class="showClassification?'icon-arrow-up':'icon-arrow-down'"></i>
+		</span>
+		<span class="filter-tab" ng-click="getList('exchangeAmount');">
+			兑换量
+			<i class="icon" ng-class="form.sortType=='01'?'icon-arrow-up':form.sortType=='02'?'icon-arrow-down':''"></i>
+		</span>
+		<span class="filter-tab" ng-click="getList('integral');">
+			积分
+			<i class="icon" ng-class="form.sortType=='03'?'icon-arrow-up':form.sortType=='04'?'icon-arrow-down':''"></i>
+		</span>
+		<span class="filter-tab" ng-click="showIntegralSpanFn();">
+			{{form.interval=='00'?'区间':
+			form.interval=='01'?'0-1W':
+			form.interval=='02'?'1W-1.5W':
+			form.interval=='03'?'1.5W-3W':
+			form.interval=='04'?'3W以上':''}}
+			<i class="icon" ng-class="showIntegralSpan?'icon-arrow-up':'icon-arrow-down'"></i>
+		</span>
 	</div>
 	<!-- 列表 -->
-	<ul class="list">
-		<li class="list-item">
-			<img src="../images/upload/image-product.png"/>
-			<div class="name">{{'苹果手机'}}</div>
+	<ul class="list dropload-list">
+		<li class="list-item" ng-repeat="item in renderData.shopList" ng-click="form.goPath('exchangeDetail/'+item.productCode);">
+			<img ng-src="{{item.imageUrl}}" alt="{{item.productName}}"/>
+			<div class="name">{{item.productName}}</div>
 			<div class="info">
-				<span class="count">{{'12000'}}积分</span>
-				<span class="tag">特惠</span>
-				<span class="status">已下架</span>
-			</div>
-		</li>
-		<li class="list-item">
-			<img src="../images/upload/image-product.png"/>
-			<div class="name">{{'苹果手机'}}</div>
-			<div class="info">
-				<span class="count">{{'12000'}}积分</span>
-				<span class="tag">特惠</span>
-				<span class="status">已下架</span>
-			</div>
-		</li>
-		<li class="list-item">
-			<img src="../images/upload/image-product.png"/>
-			<div class="name">{{'苹果手机'}}</div>
-			<div class="info">
-				<span class="count">{{'12000'}}积分</span>
-				<span class="tag">特惠</span>
-				<span class="status">已下架</span>
-			</div>
-		</li>
-		<li class="list-item">
-			<img src="../images/upload/image-product.png"/>
-			<div class="name">{{'苹果手机'}}</div>
-			<div class="info">
-				<span class="count">{{'12000'}}积分</span>
-				<span class="tag">特惠</span>
-				<span class="status">已下架</span>
-			</div>
-		</li>
-		<li class="list-item">
-			<img src="../images/upload/image-product.png"/>
-			<div class="name">{{'苹果手机'}}</div>
-			<div class="info">
-				<span class="count">{{'12000'}}积分</span>
-				<span class="tag">特惠</span>
-				<span class="status">已下架</span>
-			</div>
-		</li>
-		<li class="list-item">
-			<img src="../images/upload/image-product.png"/>
-			<div class="name">{{'苹果手机'}}</div>
-			<div class="info">
-				<span class="count">{{'12000'}}积分</span>
-				<span class="tag">特惠</span>
-				<span class="status">已下架</span>
-			</div>
-		</li>
-		<li class="list-item">
-			<img src="../images/upload/image-product.png"/>
-			<div class="name">{{'苹果手机'}}</div>
-			<div class="info">
-				<span class="count">{{'12000'}}积分</span>
-				<span class="tag">特惠</span>
-				<span class="status">已下架</span>
-			</div>
-		</li>
-		<li class="list-item">
-			<img src="../images/upload/image-product.png"/>
-			<div class="name">{{'苹果手机'}}</div>
-			<div class="info">
-				<span class="count">{{'12000'}}积分</span>
-				<span class="tag">特惠</span>
-				<span class="status">已下架</span>
-			</div>
-		</li>
-		<li class="list-item">
-			<img src="../images/upload/image-product.png"/>
-			<div class="name">{{'苹果手机'}}</div>
-			<div class="info">
-				<span class="count">{{'12000'}}积分</span>
-				<span class="tag">特惠</span>
-				<span class="status">已下架</span>
-			</div>
-		</li>
-		<li class="list-item">
-			<img src="../images/upload/image-product.png"/>
-			<div class="name">{{'苹果手机'}}</div>
-			<div class="info">
-				<span class="count">{{'12000'}}积分</span>
-				<span class="tag">特惠</span>
-				<span class="status">已下架</span>
+				<span class="count">{{item.activityType=='01'||item.activityType=='02'?item.activityScore:item.defaultScore}} 积分</span>
+				<span class="tag" ng-if="item.activityType=='02'">特惠</span>
+				<span class="tag" ng-if="item.activityType=='03'">推荐</span>
+				<span class="status" ng-if="item.statusCode!='03'">已下架</span>
 			</div>
 		</li>
 	</ul>
 	<!-- 更多菜单 -->
-	<div class="menu" ng-if="false">
-		<div class="menu-tab">
+	<div class="menu" ng-if="showMoreMenu">
+		<div class="menu-tab" ng-click="form.goPath('shoppingCart');">
 			<i class="icon icon-shopping-cart"></i>购物车
 		</div>
-		<div class="menu-tab">
+		<div class="menu-tab" ng-click="form.goPath('addressManagement');">
 			<i class="icon icon-location-outline"></i>收货地址
 		</div>
-		<div class="menu-tab">
+		<div class="menu-tab" ng-click="form.goPath('myCollection');">
 			<i class="icon icon-favorite_border"></i>我的收藏
 		</div>
 	</div>
 	<!-- 分类 -->
-	<div class="classification" ng-if="false">
-		<div class="all selected">所有礼品</div>
+	<div class="classification" ng-if="showClassification">
+		<div class="all" ng-click="getList('classifical','');" ng-class="form.category==''?'selected':''">所有礼品</div>
 		<div class="list">
-			<span class="list-item">
-				<img src="../images/upload/icon-JJSS-default.png"/>家居生活
-			</span>
-			<span class="list-item">
-				<img src="../images/upload/icon-SMDZ-default.png"/>数码电子
-			</span>
-			<span class="list-item">
-				<img src="../images/upload/icon-WBWJ-default.png"/>文本玩具
-			</span>
-			<span class="list-item">
-				<img src="../images/upload/icon-SPBJ-default.png"/>食品保健
-			</span>
-			<span class="list-item">
-				<img src="../images/upload/icon-MRPS-default.png"/>美容配饰
-			</span>
-			<span class="list-item">
-				<img src="../images/upload/icon-HWYD-default.png"/>户外运动
-			</span>
-			<span class="list-item">
-				<img src="../images/upload/icon-QCYP-default.png"/>汽车用品
-			</span>
-			<span class="list-item">
-				<img src="../images/upload/icon-XNKQ-default.png"/>虚拟卡卷
-			</span>
-			<span class="list-item">
-				<img src="../images/upload/icon-SHDQ-default.png"/>生活电器
-			</span>
-			<span class="list-item">
-				<img src="../images/upload/icon-XBPJ-default.png"/>箱包皮具
-			</span>
-			<span class="list-item">
-				<img src="../images/upload/icon-CFYJ-default.png"/>厨房用具
-			</span>
-			<span class="list-item">
-				<img src="../images/upload/icon-GRHL-default.png"/>个人护理
+			<span class="list-item" ng-class="item.dataValue==form.category?'selected':''" ng-repeat="item in renderData.classifical" ng-click="getList('classifical',item);">
+				<img ng-src="{{item.dataValue==form.category?item.imageSelectedUrl:item.imageUrl}}"/>{{item.dataText}}
 			</span>
 		</div>
 	</div>
 	<!-- 区间 -->
-	<div class="interval" ng-if="false">
-		<div class="interval-tab selected">不限</div>
-		<div class="interval-tab">0~10000分</div>
-		<div class="interval-tab">10000~15000分</div>
-		<div class="interval-tab">15000~30000分</div>
-		<div class="interval-tab">30000分以上</div>
+	<div class="interval" ng-if="showIntegralSpan">
+		<div class="interval-tab" ng-class="form.interval==item.key?'selected':''" ng-repeat="item in renderData.integralSpan" ng-click="getList('integralSpan',item);">{{item.value}}</div>
 	</div>
 </div>

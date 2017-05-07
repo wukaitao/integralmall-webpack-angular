@@ -1,29 +1,41 @@
 ﻿<div class="main integral-draw-detail">
 	<!-- 图片 -->
-	<div class="image"></div>
+	<div class="image" ng-if="renderData.imageUrlList.length">
+		<img ng-repeat="item in renderData.imageUrlList | limitTo:1 | orderBy:['sortNo']" ng-src="{{item.imageUrl}}"/>
+	</div>
 	<!-- 名称/积分/收藏 -->
 	<div class="pannel">
 		<div class="name">
-			<span class="tag">特惠</span>贝德玛（Bioderma）舒妍洁肤液500ml卸妆水（粉水 卸妆 眼唇 舒缓 保湿）
+			<span class="status" ng-if="renderData.statusCode!='03'">已下架</span>
+			{{renderData.productName}}
 		</div>
-		<div class="count">{{'100'}}积分</div>
+		<div class="count">
+			<strong>{{renderData.activityType=='01'||renderData.activityType=='02'?renderData.activityScore:renderData.defaultScore}}</strong>积分
+		</div>
 	</div>
 	<!-- 活动规则 -->
 	<div class="rule">
-		<div class="rule-title">活动规则</div>
-		<ul class="rule-content">
+		<div class="rule-title" ng-class="showRule?'to-show':'to-more'" ng-click="showRule=!showRule;">活动规则</div>
+		<ul class="rule-content" ng-show="showRule">
 			<li>每位会员每天可无限次抽奖</li>
 			<li>奖品图片仅供参考，具体以实物为准</li>
 			<li>XX公司对本活动拥有最终解释权</li>
-		</u;>
+		</ul>
 	</div>
 	<!-- 产品详情 -->
 	<div class="detail">
-		<div class="detail-title">产品详情</div>
-		<div class="detail-content">此处为商品详情...</div>
+		<div class="detail-title" ng-class="showDetail?'to-show':'to-more'" ng-click="showDetail=!showDetail;">产品详情</div>
+		<div class="detail-content" ng-show="showDetail" ng-bind-html="renderData.productDetail"></div>
 	</div>
 	<!-- 底部工具栏 -->
 	<div class="operation">
-		<button class="btn">立即抽奖</button>
+		<span class="operation-tab draw" ng-click="showDraw();">立即抽奖</span>
 	</div>
+	<!-- 抽奖进度条-->
+    <div class="progress" ng-if="showProgressBar">
+        <div class="bar">
+            <div class="bar-inner effect"></div>
+        </div>
+        <div class="text">抽奖中...</div>
+    </div>
 </div>

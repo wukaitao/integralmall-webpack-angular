@@ -1,47 +1,51 @@
 ﻿<div class="main exchange-detail">
 	<!-- 图片 -->
-	<div class="image">
-		<img src="../images/upload/image-product.png"/>
+	<div class="image" ng-if="renderData.imageUrlList.length">
+		<img ng-repeat="item in renderData.imageUrlList | limitTo:1 | orderBy:['sortNo']" ng-src="{{item.imageUrl}}"/>
 	</div>
 	<!-- 名称/积分/收藏 -->
 	<div class="pannel">
 		<div class="name">
-			<span class="tag">特惠</span>贝德玛（Bioderma）舒妍洁肤液500ml卸妆水（粉水 卸妆 眼唇 舒缓 保湿）
+			<span class="tag" ng-if="renderData.activityType=='02'">特惠</span>
+			<span class="tag" ng-if="renderData.activityType=='03'">推荐</span>
+			<span class="status" ng-if="renderData.statusCode!='03'">已下架</span>
+			{{renderData.productName}}
 		</div>
 		<div class="count-collection">
 			<span class="count">
-				<strong>{{'100'}}</strong>积分
+				<strong>{{renderData.activityType=='01'||renderData.activityType=='02'?renderData.activityScore:renderData.defaultScore}}</strong>积分
 			</span>
-			<span class="collection">
-				<i class="icon icon-favorite_border"></i>未收藏
+			<span class="collection" ng-click="renderData.collectStatus=='00'?addFavorite():delFavorite()">
+				<i class="icon" ng-class="renderData.collectStatus=='00'?'icon-favorite_border':'icon-favorite'"></i>
+				{{renderData.collectStatus=='00'?'收藏':'已收藏'}}
 			</span>
 		</div>
 	</div>
 	<!-- 编号/数量 -->
 	<div class="pannel">
-		<div class="code">礼品编号：{{'1200120170420'}}</div>
+		<div class="code">礼品编号：{{renderData.productCode}}</div>
 		<div class="amount">
 			兑换数量：
 			<span class="counter">
-				<span class="delete">-</span>
-				<span>{{'1'}}</span>
-				<span class="add">+</span>
+				<span class="delete" ng-click="delCount();" ng-class="renderData.amount==1?'disabled':''">-</span>
+				<span>{{renderData.amount}}</span>
+				<span class="add" ng-click="addCount();">+</span>
 			</span>
 		</div>
 	</div>
 	<!-- 产品详情 -->
 	<div class="detail">
-		<div class="detail-title to-show">产品详情</div>
-		<div class="detail-content">此处为商品详情...</div>
+		<div class="detail-title" ng-class="showDetail?'to-show':'to-more'" ng-click="showDetail=!showDetail;">产品详情</div>
+		<div class="detail-content" ng-show="showDetail" ng-bind-html="renderData.productDetail"></div>
 	</div>
 	<!-- 底部工具栏 -->
 	<div class="operation">
-		<span class="operation-tab">
+		<span class="operation-tab" ng-click="form.goPath('shoppingCart');">
 			<i class="icon icon-shopping-cart">
-				<span class="count">{{'5'}}</span>
+				<span class="count">{{renderData.cartAmount}}</span>
 			</i>购物车
 		</span>
-		<span class="operation-tab add">加入购物车</span>
-		<span class="operation-tab exchange">立即兑换</span>
+		<span class="operation-tab add" ng-click="addToShoppingCart();">加入购物车</span>
+		<span class="operation-tab exchange" ng-click="toFillOrderPath();" ng-class="renderData.statusCode!='03'?'disabled':''">立即兑换</span>
 	</div>
 </div>

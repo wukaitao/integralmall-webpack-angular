@@ -1,44 +1,26 @@
 ﻿<div class="main logistics">
 	<!-- 快递公司信息 -->
 	<div class="express">
-		<img src="../images//upload/image-product.png"/>
+		<img ng-src="{{renderData.imageUrl}}"/>
 		<div class="name-code">
 			<span class="name">
-				快递公司：{{'顺丰快递'}}
+				<label>快递公司：</label>{{renderData.expressName}}
 			</span>
 			<span class="code">
-				快递单号：{{'SZ201405550008'}}
+				<label>快递单号：</label>{{renderData.expressCode}}
 			</span>
 		</div>
 	</div>
 	<!-- 物流信息 -->
 	<div class="process">
-		<div class="process-item">
-			<span class="point-line"></span>
-			<span class="date-desc">
-				<span class="date">2017-05-25 17:25:49</span>
-				<span class="desc">深圳南山科技园大厦 - 已收货</span>
+		<div class="process-item" ng-repeat="item in renderData.expressDetail">
+			<span class="point-line">
+				<span class="point"></span>
+				<span class="line"></span>
 			</span>
-		</div>
-		<div class="process-item">
-			<span class="point-line"></span>
 			<span class="date-desc">
-				<span class="date">2017-05-25 17:25:49</span>
-				<span class="desc">深圳南山科技园大厦 - 已收货</span>
-			</span>
-		</div>
-		<div class="process-item">
-			<span class="point-line"></span>
-			<span class="date-desc">
-				<span class="date">2017-05-25 17:25:49</span>
-				<span class="desc">深圳南山科技园大厦 - 已收货</span>
-			</span>
-		</div>
-		<div class="process-item">
-			<span class="point-line"></span>
-			<span class="date-desc">
-				<span class="date">2017-05-25 17:25:49</span>
-				<span class="desc">深圳南山科技园大厦 - 已收货</span>
+				<span class="date">{{item.date}}</span>
+				<span class="desc">{{item.desc}}</span>
 			</span>
 		</div>
 	</div>

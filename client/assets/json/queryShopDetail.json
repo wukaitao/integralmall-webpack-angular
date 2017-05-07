@@ -1,0 +1,24 @@
+﻿{
+    "respCode": "00", 
+    "respDesc": "请求成功", 
+    "respData": {
+		"productCode": "PD001",
+		"productName": "苹果手机A",
+		"imageUrlList": [
+			{"imageUrl": "../assets/images/upload/image-product.png","sortNo":"1"},
+			{"imageUrl": "../assets/images/upload/image-product.png","sortNo":"2"},
+			{"imageUrl": "../assets/images/upload/image-product.png","sortNo":"3"},
+			{"imageUrl": "../assets/images/upload/image-product.png","sortNo":"4"}
+		],
+		"defaultScore": "100",
+		"activityScore": "800",
+		"collectStatus": "00",
+		"activityType": "02",
+		"productDetail": "此处为商品描述...",
+		"statusCode": "03",
+		"color": "红色",
+		"cartAmount": "6",
+		"isInShoppingCart": "0",
+		"amount": "1"
+    }
+}

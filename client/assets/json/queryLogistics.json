@@ -1,6 +1,19 @@
-﻿﻿{
+﻿{
     "respCode": "00", 
     "respDesc": "请求成功", 
     "respData": {
+		"expressName": "顺丰快递",
+		"expressCode": "EXC001",
+		"imageUrl": "../assets/images/upload/image-product.png",
+		"expressDetail": [
+			{
+				"date": "2017-01-05 19:20:07",
+				"desc": "已出货,发往上海航空部运往深圳南山区省通营业部"
+			},
+			{
+				"date": "2017-01-05 12:07:17",
+				"desc": "已下单"
+			}
+		]
     }
 }
