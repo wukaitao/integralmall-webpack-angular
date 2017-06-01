@@ -19,7 +19,7 @@
 	$scope.getImageCodeImage = function(){
 		$scope.imageCodeImage = '';
 		$timeout(function(){
-			$scope.imageCodeImage = origin+'/mb-member/validate-code.xhtml?action='+$scope.actionImageCode;
+			$scope.imageCodeImage = 'https://login.sina.com.cn/cgi/pin.php?r='+new Date().getTime()+'&lang=zh&type=hollow&?action='+$scope.actionImageCode;
 		},100);
 	};
 	$scope.getImageCodeImage();

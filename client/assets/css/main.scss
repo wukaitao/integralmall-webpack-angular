@@ -515,6 +515,8 @@ a,input,select,textarea,button,img,span{
         display: inline-block;
         width: 100%;
         .list-item{
+            position: relative;
+            z-index: 2;
             display: inline-block;
             float: left;
             width: 50%;
@@ -574,68 +576,79 @@ a,input,select,textarea,button,img,span{
         }
     }
     .classification{
-        position: absolute;
+        position: fixed;
         top: 122px;
+        bottom: 0px;
         left: 0px;
         right: 0px;
         z-index: 4;
-        background-color: $white;
-        border-radius: 0px 0px 5px 5px;
-        box-shadow: 1px 1px 1px rgba(0,0,0,0.35);
-        text-align: center;
-        .all{
-            line-height: 32px;
-            &.selected{
-                color: $blue;
-            }
-        }
-        .list{
-            display: inline-block;
-            float: left;
-            width: 100%;
-            .list-item{
-                display: inline-block;
-                float: left;
-                width: calc(100vw/3);
-                padding: 8px 0px;
-                border-top: 1px solid $lightGray;
-                border-right: 1px solid $lightGray;
-                img{
-                    max-width: 24px;
-                    max-height: 24px;
-                    padding-right: 5px;
-                }
-                &:nth-child(3n){
-                    border-right: none;
-                }
+        background-color: rgba(0,0,0,0.15);
+        .classification-box{
+            position: absolute;
+            background-color: $white;
+            border-radius: 0px 0px 5px 5px;
+            box-shadow: 1px 1px 1px rgba(0,0,0,0.35);
+            text-align: center;
+            .all{
+                line-height: 32px;
                 &.selected{
                     color: $blue;
+                }
+            }
+            .list{
+                display: inline-block;
+                float: left;
+                width: 100%;
+                .list-item{
+                    display: inline-block;
+                    float: left;
+                    width: calc(100vw/3);
+                    padding: 8px 0px;
+                    border-top: 1px solid $lightGray;
+                    border-right: 1px solid $lightGray;
+                    img{
+                        max-width: 24px;
+                        max-height: 24px;
+                        padding-right: 5px;
+                    }
+                    &:nth-child(3n){
+                        border-right: none;
+                    }
+                    &.selected{
+                        color: $blue;
+                    }
                 }
             }
         }
     }
     .interval{
-        position: absolute;
+        position: fixed;
         top: 122px;
+        bottom: 0px;
         left: 0px;
         right: 0px;
         z-index: 4;
-        background-color: $white;
-        border-radius: 0px 0px 5px 5px;
-        box-shadow: 1px 1px 1px rgba(0,0,0,0.35);
-        padding: 0px 10px;
-        .interval-tab{
-            line-height: 32px;
-            border-bottom: 1px solid $lightGray;
-            &:last-child{
-                border-bottom: none;
-            }
-            &.selected{
-                color: $blue;
-                &:after{
-                    float: right;
-                    content: '\e116';
-                    font-family: 'icomoon';
+        background-color: rgba(0,0,0,0.15);
+        .interval-box{
+            position: absolute;
+            background-color: $white;
+            width: 100%;
+            border-radius: 0px 0px 5px 5px;
+            box-shadow: 1px 1px 1px rgba(0,0,0,0.35);
+            padding: 0px 10px;
+            .interval-tab{
+                line-height: 32px;
+                border-bottom: 1px solid $lightGray;
+                &:last-child{
+                    border-bottom: none;
+                }
+                &.selected{
+                    color: $blue;
+                    &:after{
+                        float: right;
+                        content: '\e116';
+                        font-family: 'icomoon';
+                    }
                 }
             }
         }
@@ -933,6 +946,10 @@ a,input,select,textarea,button,img,span{
                 border-bottom: 1px solid $lightGray;
                 span{
                     float: right;
+                }
+                img{
+                    float: right;
+                    height: 32px;
                 }
             }
             .error{
@@ -1394,7 +1411,7 @@ a,input,select,textarea,button,img,span{
     .form{
         padding: 5px 10px;
         .form-item{
-            line-height: 28px;
+            line-height: 32px;
             label{
                 display: block;
             }
@@ -1403,14 +1420,21 @@ a,input,select,textarea,button,img,span{
                 border-bottom: 1px solid $lightGray;
                 input{
                     width: 100%;
-                    height: 28px;
-                    line-height: 28px;
+                    height: 32px;
+                    line-height: 32px;
                     padding: 0px 2px;
                     border: none;
+                    &.imageCode{
+                        width: calc(100% - 80px);
+                    }
+                }
+                img{
+                    float: right;
+                    height: 32px;
                 }
             }
             .error{
-                line-height: 28px;
+                line-height: 32px;
                 color: $red;
             }
         }
@@ -1449,6 +1473,8 @@ a,input,select,textarea,button,img,span{
     .order{
         background-color: $lightGray;
         .order-item{
+            position: relative;
+            z-index: 2;
             margin-bottom: 8px;
             padding: 0px 10px;
             background-color: $white;

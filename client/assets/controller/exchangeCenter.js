@@ -42,11 +42,15 @@
 				};
 			});
 		};
+		if($scope.showClassification||$scope.showIntegralSpan) angular.element('body').css({overflow:'hidden'});
+		else angular.element('body').css({overflow:'auto'});
 	};
 	//显示积分跨度
 	$scope.showIntegralSpanFn = function(){
 		$scope.showClassification = false;
 		$scope.showIntegralSpan = !$scope.showIntegralSpan;
+		if($scope.showClassification||$scope.showIntegralSpan) angular.element('body').css({overflow:'hidden'});
+		else angular.element('body').css({overflow:'auto'});
 	};
 	$scope.renderData.integralSpan = [
         {
@@ -99,6 +103,7 @@
 		}else if(fromType=='integral'){
 			form.sortType = form.sortType=='03'?'04':'03';
 		};
+		angular.element('body').css({overflow:'auto'});
 		$scope.showClassification = false;
 		$scope.showIntegralSpan = false;
 		$scope.isNoData = false;

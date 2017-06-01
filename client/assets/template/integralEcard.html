@@ -13,7 +13,7 @@
 			<label>请输入图片验证码：</label>
 			<span class="text">
 				<input type="text" autocomplete="off" placeholder="请输入4位验证码" maxlength="4" 
-				ng-model="imageCode" ng-keyup="filterImageCode();" ng-blur="initCheckImage=false;checkImageCode();"/>
+				ng-model="imageCode" ng-keyup="filterImageCode();" ng-blur="initCheckImage=false;checkImageCode();" class="imageCode"/>
 				<img ng-click="getImageCodeImage();" ng-src="{{imageCodeImage}}">
 			</span>
 			<div class="error" ng-if="!initCheckImage&&isErrorCheckImageCode">{{errorMessageImageCode}}</div>

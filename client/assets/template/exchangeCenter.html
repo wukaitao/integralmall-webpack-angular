@@ -62,15 +62,19 @@
 	</div>
 	<!-- 分类 -->
 	<div class="classification" ng-if="showClassification">
-		<div class="all" ng-click="getList('classifical','');" ng-class="form.category==''?'selected':''">所有礼品</div>
-		<div class="list">
-			<span class="list-item" ng-class="item.dataValue==form.category?'selected':''" ng-repeat="item in renderData.classifical" ng-click="getList('classifical',item);">
-				<img ng-src="{{item.dataValue==form.category?item.imageSelectedUrl:item.imageUrl}}"/>{{item.dataText}}
-			</span>
+		<div class="classification-box">
+			<div class="all" ng-click="getList('classifical','');" ng-class="form.category==''?'selected':''">所有礼品</div>
+			<div class="list">
+				<span class="list-item" ng-class="item.dataValue==form.category?'selected':''" ng-repeat="item in renderData.classifical" ng-click="getList('classifical',item);">
+					<img ng-src="{{item.dataValue==form.category?item.imageSelectedUrl:item.imageUrl}}"/>{{item.dataText}}
+				</span>
+			</div>
 		</div>
 	</div>
 	<!-- 区间 -->
 	<div class="interval" ng-if="showIntegralSpan">
-		<div class="interval-tab" ng-class="form.interval==item.key?'selected':''" ng-repeat="item in renderData.integralSpan" ng-click="getList('integralSpan',item);">{{item.value}}</div>
+		<div class="interval-box">
+			<div class="interval-tab" ng-class="form.interval==item.key?'selected':''" ng-repeat="item in renderData.integralSpan" ng-click="getList('integralSpan',item);">{{item.value}}</div>
+		</div>
 	</div>
 </div>
