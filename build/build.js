@@ -1,7 +1,6 @@
 ﻿const HtmlWebpackPlugin =  require('html-webpack-plugin');//生成html中间件
 const ExtractTextPlugin = require('extract-text-webpack-plugin');//抽取css样式
 const TransferWebpackPlugin = require('transfer-webpack-plugin');//复制文件
-const CopyWebpackPlugin = require('copy-webpack-plugin');//复制文件(可以单个文件复制)
 const webpack = require('webpack');//打包工具
 const merge = require('webpack-merge');//合并
 const path = require('path');//路径中间件
@@ -30,14 +29,10 @@ const config = merge(baseWebpackConfig,{
   			{from: path.resolve(__dirname,'../client/assets/json'),to: 'assets/json'},//复制json文件
   			{from: path.resolve(__dirname,'../client/assets/lib'),to: 'assets/lib'}//复制lib文件
   		]),
-  		new CopyWebpackPlugin([{
-  			//复制单个文件
-        	from: path.resolve(__dirname,'../client/assets/images/favorite.ico'), 
-        	to: 'assets/images/favorite.ico'
-        }]),
   		new HtmlWebpackPlugin({
   			filename: 'index.html',//文件名
   			title: 'my first project by webpack.',//标题(会被template模板覆盖)
+  			favicon: path.resolve(__dirname,'../client/assets/images/design/favorite.ico'),//图标
   			template: path.resolve(__dirname,'../client/main.html'),//模板
   			inject: true,//是否插入到body
   			minify: {//压缩

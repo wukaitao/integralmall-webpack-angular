@@ -192,14 +192,14 @@ app.run([
 				'leftBtnType': 'icon icon-keyboard_arrow_left',
 				'leftBtnTitle': '',
 				'showRightBtn': true,
-				'rightBtnType': 'icon icon-trash',
+				'rightBtnType': 'icon icon-home-outline',
 				'rightBtnTitle': ''
             };
 	        $rootScope.form.leftBtnClick = function(){
 		    	window.location.href=window.history.back();
 		    };
 	        $rootScope.form.rightBtnClick = function(){
-		    	window.location.href=origin+'/mb-service/index.xhtml';
+		    	$location.path('integralMall');
 		    };
 	    });
 	    //toast提示弹窗
@@ -286,7 +286,7 @@ app.factory('form',['$location',function($location){
 	    	window.location.href=window.history.back();
 	    },
 	    rightBtnClick: function(){
-	    	window.location.href=origin+'/mb-service/index.xhtml';
+	    	$location.path('integralMall');
 	    },
 	    goPath: function(path){
 			$location.path(path);

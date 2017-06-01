@@ -1,9 +1,10 @@
 ﻿module.exports = ['$scope', '$timeout', '$location', '$routeParams', 'form', 'baseDataService',
     function($scope, $timeout, $location, $routeParams, form, baseDataService){
 	form.topBar.topBarTitle = '积分商城';
-	//form.leftBtnClick = function(){
-	//	console.log('返回到原生app首页');
-	//};
+	form.leftBtnClick = function(){
+		//console.log('返回到原生app首页');
+    	window.location.href=origin+'/mb-service/index.xhtml';
+	};
 	//页面初始化配置
     form.loading.show = true;
 	$scope.action = 'MB';

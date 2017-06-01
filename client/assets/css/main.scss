@@ -103,6 +103,13 @@ a,input,select,textarea,button,img,span{
         font-size: 28px;
         margin: 7px 0;
     }
+    .icon-home-outline{
+        font-size: 18px;
+        width: 28px;
+        height: 28px;
+        text-align: center;
+        line-height: 28px;
+    }
 }
 .wrap{
     margin-top: 42px;
@@ -221,8 +228,8 @@ a,input,select,textarea,button,img,span{
             display: inline-block;
             vertical-align: middle;
             img{
-                width: 24px;
-                height: 24px;
+                width: 16px;
+                height: 16px;
             }
         }
         .loadingFont{

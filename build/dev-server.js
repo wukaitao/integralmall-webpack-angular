@@ -38,6 +38,7 @@ const config = merge(baseWebpackConfig,{
   		new HtmlWebpackPlugin({
   			filename: 'index.html',//文件名
   			title: 'my first project by webpack.',//标题(会被template模板覆盖)
+  			favicon: path.resolve(__dirname,'../client/assets/images/design/favorite.ico'),//图标
   			template: path.resolve(__dirname,'../client/main.html'),//模板
   			inject: true//是否插入到body
   		})
@@ -70,11 +71,11 @@ app.use(hotMiddleWare);//注入热重载
 app.use(express.static('./client'));//静态目录
 //代理服务器
 const proxyTable = {
-	'/hmc_ghb_server/': {
-		target: 'http://hms-uat.cignacmb.com/hmc_ghb_server/',
+	'/shop/': {
+		target: 'http://www.baidu.com/shop/',
 		changeOrigin: true,
 		pathRewrite: {
-			'^/hmc_ghb_server/': ''
+			'^/shop/': ''
 		}
 	}
 };

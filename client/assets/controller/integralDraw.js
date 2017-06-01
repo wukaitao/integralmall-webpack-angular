@@ -20,7 +20,6 @@
 		if(!$scope.renderDataReward){
 			var promise = baseDataService.originalHttp(queryWinningRecordList);
 			promise.then(function(data){
-				console.log(data);
 				if(data.respCode=='00'){
 					$scope.renderDataReward = data.respData;
 					$timeout(function(){

@@ -61,7 +61,6 @@
 		if(one.isComplete) return;
 		if(one.code=='BDDD'){
 			$scope.showConfirm('首次绑定个险送100积分立即绑定？',function(){
-				console.log('根据入口渠道跳转');
 			});
 		}else if(one.code=='XBDD_01'){
 		}else if(one.code=='MRQD'){

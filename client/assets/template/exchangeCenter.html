@@ -16,15 +16,15 @@
 	<div class="filter">
 		<span class="filter-tab" ng-click="showClassificationFn();">
 			{{form.categoryName}}
-			<i class="icon" ng-class="showClassification?'icon-arrow-up':'icon-arrow-down'"></i>
+			<i class="icon" ng-class="showClassification?'icon-keyboard_arrow_up':'icon-keyboard_arrow_down'"></i>
 		</span>
 		<span class="filter-tab" ng-click="getList('exchangeAmount');">
 			兑换量
-			<i class="icon" ng-class="form.sortType=='01'?'icon-arrow-up':form.sortType=='02'?'icon-arrow-down':''"></i>
+			<i class="icon" ng-class="form.sortType=='01'?'icon-keyboard_arrow_up':form.sortType=='02'?'icon-keyboard_arrow_down':''"></i>
 		</span>
 		<span class="filter-tab" ng-click="getList('integral');">
 			积分
-			<i class="icon" ng-class="form.sortType=='03'?'icon-arrow-up':form.sortType=='04'?'icon-arrow-down':''"></i>
+			<i class="icon" ng-class="form.sortType=='03'?'icon-keyboard_arrow_up':form.sortType=='04'?'icon-keyboard_arrow_down':''"></i>
 		</span>
 		<span class="filter-tab" ng-click="showIntegralSpanFn();">
 			{{form.interval=='00'?'区间':
@@ -32,7 +32,7 @@
 			form.interval=='02'?'1W-1.5W':
 			form.interval=='03'?'1.5W-3W':
 			form.interval=='04'?'3W以上':''}}
-			<i class="icon" ng-class="showIntegralSpan?'icon-arrow-up':'icon-arrow-down'"></i>
+			<i class="icon" ng-class="showIntegralSpan?'icon-keyboard_arrow_up':'icon-keyboard_arrow_down'"></i>
 		</span>
 	</div>
 	<!-- 列表 -->
