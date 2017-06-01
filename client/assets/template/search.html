@@ -2,18 +2,19 @@
 	<!-- 操作 -->
 	<div class="operation">
 		<span class="search">
-			<i class="icon icon-search"></i>
-			<input type="text" autocomplete="off" placeholder="搜索"/>
+			<form ng-submit="search();">
+				<i class="icon icon-search"></i>
+				<input type="text" autocomplete="off" placeholder="搜索" ng-model="form.searchKey"/>
+			</form>
 		</span>
-		<span class="cancel">取消</span>
+		<span class="cancel" ng-click="cancel();">取消</span>
 	</div>
 	<!-- 搜索历史 -->
 	<div class="history">
 		<dl>
 			<dt>历史搜索</dt>
-			<dd>{{'背包'}}</dd>
-			<dd>{{'购物券'}}</dd>
+			<dd ng-repeat="item in searchHistory | orderBy:['-count','-time'] | limitTo:10" ng-click="goListPath(item);">{{item.keyword}}</dd>
 		</dl>
-		<div class="clear">清除记录</div>
+		<div class="clear" ng-click="removeHistory();">清除记录</div>
 	</div>
 </div>

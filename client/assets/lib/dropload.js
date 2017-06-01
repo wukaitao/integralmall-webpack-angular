@@ -93,26 +93,26 @@
         });
 
         // 绑定触摸
-        me.$element.on('touchstart',function(e){
+        me.$element.off('touchstart').on('touchstart',function(e){
             if(!me.loading){
                 fnTouches(e);
                 fnTouchstart(e, me);
             }
         });
-        me.$element.on('touchmove',function(e){
+        me.$element.off('touchmove').on('touchmove',function(e){
             if(!me.loading){
                 fnTouches(e, me);
                 fnTouchmove(e, me);
             }
         });
-        me.$element.on('touchend',function(){
+        me.$element.off('touchend').on('touchend',function(){
             if(!me.loading){
                 fnTouchend(me);
             }
         });
 
         // 加载下方
-        me.$scrollArea.on('scroll',function(){
+        me.$scrollArea.off('scroll').on('scroll',function(){
             me._scrollTop = me.$scrollArea.scrollTop();
 
             // 滚动页面触发加载数据
