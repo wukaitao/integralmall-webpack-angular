@@ -44,7 +44,7 @@
     "http-proxy-middleware": "^0.17.3",
     "json-loader": "^0.5.4",
     "md5": "^2.2.1",
-    "node-sass": "^4.1.1",
+    "node-sass": "^4.5.3",
     "opn": "^4.0.2",
     "resolve-url-loader": "^2.0.2",
     "sass-loader": "^4.1.1",
